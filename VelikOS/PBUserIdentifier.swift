@@ -40,6 +40,8 @@ class PBUserIdentifier: NSWindowController {
     
     @IBAction func lDone(_ sender: NSButton) {
         
+        PBBackendlessAPI.shared.retrieveUserEntityProperties()
+        
         let permission = true
         if permission {
             let controller = PBMainMenu(windowNibName: "MainMenu")

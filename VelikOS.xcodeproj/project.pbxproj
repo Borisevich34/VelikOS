@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B75EBF82BE98CFEAC517D47 /* Pods_VelikOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21ABA84F22B6BD022797F017 /* Pods_VelikOS.framework */; };
 		E936AB131E52F42E00410F56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB121E52F42E00410F56 /* AppDelegate.swift */; };
 		E936AB161E52F42E00410F56 /* VelikOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E936AB141E52F42E00410F56 /* VelikOS.xcdatamodeld */; };
 		E936AB181E52F42E00410F56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E936AB171E52F42E00410F56 /* Assets.xcassets */; };
@@ -16,9 +17,15 @@
 		E936AB281E52FC2300410F56 /* PBUserIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB271E52FC2300410F56 /* PBUserIdentifier.swift */; };
 		E936AB301E53011300410F56 /* PBMainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB2F1E53011300410F56 /* PBMainMenu.swift */; };
 		E936AB331E53370500410F56 /* PBPrevFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB321E53370500410F56 /* PBPrevFrame.swift */; };
+		E936AB391E533E3800410F56 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E936AB381E533E3800410F56 /* Podfile */; };
+		E936AB3B1E5345F300410F56 /* PBBackendlessAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB3A1E5345F300410F56 /* PBBackendlessAPI.swift */; };
+		E936AB3D1E534E8800410F56 /* PBResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB3C1E534E8800410F56 /* PBResponder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		211F090F51B6AF4B6BF04064 /* Pods-VelikOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelikOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VelikOS/Pods-VelikOS.debug.xcconfig"; sourceTree = "<group>"; };
+		21ABA84F22B6BD022797F017 /* Pods_VelikOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VelikOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D33D990ECBF2A8090FDE5B65 /* Pods-VelikOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelikOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-VelikOS/Pods-VelikOS.release.xcconfig"; sourceTree = "<group>"; };
 		E936AB0F1E52F42E00410F56 /* VelikOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VelikOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E936AB121E52F42E00410F56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E936AB151E52F42E00410F56 /* VelikOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VelikOS.xcdatamodel; sourceTree = "<group>"; };
@@ -30,6 +37,9 @@
 		E936AB271E52FC2300410F56 /* PBUserIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBUserIdentifier.swift; sourceTree = "<group>"; };
 		E936AB2F1E53011300410F56 /* PBMainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBMainMenu.swift; sourceTree = "<group>"; };
 		E936AB321E53370500410F56 /* PBPrevFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBPrevFrame.swift; sourceTree = "<group>"; };
+		E936AB381E533E3800410F56 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		E936AB3A1E5345F300410F56 /* PBBackendlessAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBBackendlessAPI.swift; sourceTree = "<group>"; };
+		E936AB3C1E534E8800410F56 /* PBResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBResponder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +47,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B75EBF82BE98CFEAC517D47 /* Pods_VelikOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B50F3A172C1785E43D754231 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21ABA84F22B6BD022797F017 /* Pods_VelikOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D530539FE42ABB9FFF2672DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				211F090F51B6AF4B6BF04064 /* Pods-VelikOS.debug.xcconfig */,
+				D33D990ECBF2A8090FDE5B65 /* Pods-VelikOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E936AB061E52F42E00410F56 = {
 			isa = PBXGroup;
 			children = (
+				E936AB381E533E3800410F56 /* Podfile */,
 				E936AB111E52F42E00410F56 /* VelikOS */,
 				E936AB101E52F42E00410F56 /* Products */,
+				D530539FE42ABB9FFF2672DC /* Pods */,
+				B50F3A172C1785E43D754231 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +106,8 @@
 			children = (
 				E936AB321E53370500410F56 /* PBPrevFrame.swift */,
 				E936AB221E52F51100410F56 /* PBCoreData.swift */,
+				E936AB3A1E5345F300410F56 /* PBBackendlessAPI.swift */,
+				E936AB3C1E534E8800410F56 /* PBResponder.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -115,9 +148,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E936AB1F1E52F42E00410F56 /* Build configuration list for PBXNativeTarget "VelikOS" */;
 			buildPhases = (
+				100DBCF992F84CD94B33BC28 /* [CP] Check Pods Manifest.lock */,
 				E936AB0B1E52F42E00410F56 /* Sources */,
 				E936AB0C1E52F42E00410F56 /* Frameworks */,
 				E936AB0D1E52F42E00410F56 /* Resources */,
+				8B9767536FFEC42A1BB46ECC /* [CP] Embed Pods Frameworks */,
+				7920F01D27B916AB4A74581E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -169,22 +205,73 @@
 			files = (
 				E936AB181E52F42E00410F56 /* Assets.xcassets in Resources */,
 				E936AB1B1E52F42E00410F56 /* MainMenu.xib in Resources */,
+				E936AB391E533E3800410F56 /* Podfile in Resources */,
 				E936AB251E52F69200410F56 /* UserIdentifier.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		100DBCF992F84CD94B33BC28 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7920F01D27B916AB4A74581E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VelikOS/Pods-VelikOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B9767536FFEC42A1BB46ECC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VelikOS/Pods-VelikOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E936AB0B1E52F42E00410F56 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E936AB3D1E534E8800410F56 /* PBResponder.swift in Sources */,
 				E936AB131E52F42E00410F56 /* AppDelegate.swift in Sources */,
 				E936AB281E52FC2300410F56 /* PBUserIdentifier.swift in Sources */,
 				E936AB231E52F51100410F56 /* PBCoreData.swift in Sources */,
 				E936AB301E53011300410F56 /* PBMainMenu.swift in Sources */,
 				E936AB331E53370500410F56 /* PBPrevFrame.swift in Sources */,
+				E936AB3B1E5345F300410F56 /* PBBackendlessAPI.swift in Sources */,
 				E936AB161E52F42E00410F56 /* VelikOS.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +382,7 @@
 		};
 		E936AB201E52F42E00410F56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 211F090F51B6AF4B6BF04064 /* Pods-VelikOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -302,12 +390,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.borisevich.VelikOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PODS_ROOT}/Headers/Public/Backendless-osx-SDK/Backendless-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		E936AB211E52F42E00410F56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D33D990ECBF2A8090FDE5B65 /* Pods-VelikOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -315,6 +405,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.borisevich.VelikOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PODS_ROOT}/Headers/Public/Backendless-osx-SDK/Backendless-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
