@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PBUserIdentifier" customModule="VelikOS" customModuleProvider="target"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="335" y="390" width="480" height="370"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="370"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <tabView fixedFrame="YES" type="bottomTabsBezelBorder" translatesAutoresizingMaskIntoConstraints="NO" id="uKT-rc-0qX">
+                        <rect key="frame" x="13" y="14" width="454" height="340"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <tabViewItems>
+                            <tabViewItem label="Login" identifier="1" id="xvN-xD-Lsm">
+                                <view key="view" id="Soy-Hz-v8E">
+                                    <rect key="frame" x="10" y="7" width="434" height="302"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzI-dS-RUl">
+                                            <rect key="frame" x="117" y="104" width="200" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Email" drawsBackground="YES" id="dhO-CS-o09">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iKf-Ku-gWN">
+                                            <rect key="frame" x="117" y="72" width="200" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Password" drawsBackground="YES" usesSingleLineMode="YES" id="B3I-pI-cey">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <allowedInputSourceLocales>
+                                                    <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                                </allowedInputSourceLocales>
+                                            </secureTextFieldCell>
+                                        </secureTextField>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jDW-4m-Pav">
+                                            <rect key="frame" x="203" y="44" width="110" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Remember me" bezelStyle="regularSquare" imagePosition="left" alignment="center" state="on" inset="2" id="0v9-76-idG">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ODG-Yh-hyo">
+                                            <rect key="frame" x="122" y="39" width="81" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Done" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CX5-oa-gZw">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="lDone:" target="KQG-o5-8IT" id="Qjy-00-pfd"/>
+                                            </connections>
+                                        </button>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xf9-16-UAZ">
+                                            <rect key="frame" x="167" y="163" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="AX0-TZ-aaV"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Registration" identifier="2" id="Hq0-yP-Nwa">
+                                <view key="view" ambiguous="YES" id="Tvm-r0-5Kw">
+                                    <rect key="frame" x="10" y="7" width="434" height="302"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uZm-VM-j7I">
+                                            <rect key="frame" x="117" y="148" width="200" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="User name" drawsBackground="YES" id="B9f-Ra-wLc">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jPn-aK-oCR">
+                                            <rect key="frame" x="117" y="116" width="200" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Email" drawsBackground="YES" id="1ev-UK-rhr">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7aS-H0-3y8">
+                                            <rect key="frame" x="117" y="84" width="200" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Password" drawsBackground="YES" usesSingleLineMode="YES" id="dQ8-fD-D9t">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <allowedInputSourceLocales>
+                                                    <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                                </allowedInputSourceLocales>
+                                            </secureTextFieldCell>
+                                        </secureTextField>
+                                        <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Zk-j1-tVM">
+                                            <rect key="frame" x="117" y="52" width="200" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Repeat password" drawsBackground="YES" usesSingleLineMode="YES" id="Bbd-z4-gOa">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <allowedInputSourceLocales>
+                                                    <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                                </allowedInputSourceLocales>
+                                            </secureTextFieldCell>
+                                        </secureTextField>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BXq-dU-r03">
+                                            <rect key="frame" x="177" y="16" width="81" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Done" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tXZ-Vy-YEJ">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="rDone:" target="KQG-o5-8IT" id="G8n-xh-0Ek"/>
+                                            </connections>
+                                        </button>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="elN-o4-T6U">
+                                            <rect key="frame" x="167" y="178" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="o8g-CW-U8d"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                    </tabView>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="139" y="212"/>
+        </window>
+        <viewController nibName="UserIdentifier" id="KQG-o5-8IT" customClass="PBUserIdentifier" customModule="VelikOS" customModuleProvider="target">
+            <connections>
+                <outlet property="lCheck" destination="jDW-4m-Pav" id="ZiX-m1-gxK"/>
+                <outlet property="lEmail" destination="xzI-dS-RUl" id="ioZ-RL-1Bt"/>
+                <outlet property="lPassword" destination="iKf-Ku-gWN" id="Fhm-fg-pRg"/>
+                <outlet property="rEmail" destination="jPn-aK-oCR" id="fpt-zx-Zi2"/>
+                <outlet property="rName" destination="uZm-VM-j7I" id="cOu-AN-8dV"/>
+                <outlet property="rPassword" destination="7aS-H0-3y8" id="wFD-LU-z35"/>
+                <outlet property="rRepeatPass" destination="0Zk-j1-tVM" id="UJ8-rx-ntp"/>
+                <outlet property="tabView" destination="uKT-rc-0qX" id="rYs-CU-eAB"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="ewn-Bz-Q5R"/>
+            </connections>
+        </viewController>
+        <customObject id="QAE-Ca-bji" customClass="AppDelegate" customModule="VelikOS" customModuleProvider="target">
+            <connections>
+                <outlet property="window" destination="QvC-M9-y7g" id="2hu-WP-QPN"/>
+            </connections>
+        </customObject>
+    </objects>
+    <resources>
+        <image name="NSApplicationIcon" width="128" height="128"/>
+    </resources>
+</document>

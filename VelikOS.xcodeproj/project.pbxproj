@@ -1,0 +1,359 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E936AB131E52F42E00410F56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB121E52F42E00410F56 /* AppDelegate.swift */; };
+		E936AB161E52F42E00410F56 /* VelikOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E936AB141E52F42E00410F56 /* VelikOS.xcdatamodeld */; };
+		E936AB181E52F42E00410F56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E936AB171E52F42E00410F56 /* Assets.xcassets */; };
+		E936AB1B1E52F42E00410F56 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E936AB191E52F42E00410F56 /* MainMenu.xib */; };
+		E936AB231E52F51100410F56 /* PBCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB221E52F51100410F56 /* PBCoreData.swift */; };
+		E936AB251E52F69200410F56 /* UserIdentifier.xib in Resources */ = {isa = PBXBuildFile; fileRef = E936AB241E52F69200410F56 /* UserIdentifier.xib */; };
+		E936AB281E52FC2300410F56 /* PBUserIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB271E52FC2300410F56 /* PBUserIdentifier.swift */; };
+		E936AB301E53011300410F56 /* PBMainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB2F1E53011300410F56 /* PBMainMenu.swift */; };
+		E936AB331E53370500410F56 /* PBPrevFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB321E53370500410F56 /* PBPrevFrame.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E936AB0F1E52F42E00410F56 /* VelikOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VelikOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E936AB121E52F42E00410F56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E936AB151E52F42E00410F56 /* VelikOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VelikOS.xcdatamodel; sourceTree = "<group>"; };
+		E936AB171E52F42E00410F56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E936AB1A1E52F42E00410F56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E936AB1C1E52F42E00410F56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E936AB221E52F51100410F56 /* PBCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBCoreData.swift; sourceTree = "<group>"; };
+		E936AB241E52F69200410F56 /* UserIdentifier.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserIdentifier.xib; sourceTree = "<group>"; };
+		E936AB271E52FC2300410F56 /* PBUserIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBUserIdentifier.swift; sourceTree = "<group>"; };
+		E936AB2F1E53011300410F56 /* PBMainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBMainMenu.swift; sourceTree = "<group>"; };
+		E936AB321E53370500410F56 /* PBPrevFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBPrevFrame.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E936AB0C1E52F42E00410F56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E936AB061E52F42E00410F56 = {
+			isa = PBXGroup;
+			children = (
+				E936AB111E52F42E00410F56 /* VelikOS */,
+				E936AB101E52F42E00410F56 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E936AB101E52F42E00410F56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E936AB0F1E52F42E00410F56 /* VelikOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E936AB111E52F42E00410F56 /* VelikOS */ = {
+			isa = PBXGroup;
+			children = (
+				E936AB311E5336EA00410F56 /* Helpers */,
+				E936AB351E53391A00410F56 /* Controllers */,
+				E936AB361E53392A00410F56 /* Interface */,
+				E936AB371E53394A00410F56 /* Other */,
+			);
+			path = VelikOS;
+			sourceTree = "<group>";
+		};
+		E936AB311E5336EA00410F56 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E936AB321E53370500410F56 /* PBPrevFrame.swift */,
+				E936AB221E52F51100410F56 /* PBCoreData.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		E936AB351E53391A00410F56 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E936AB2F1E53011300410F56 /* PBMainMenu.swift */,
+				E936AB271E52FC2300410F56 /* PBUserIdentifier.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E936AB361E53392A00410F56 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				E936AB191E52F42E00410F56 /* MainMenu.xib */,
+				E936AB241E52F69200410F56 /* UserIdentifier.xib */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		E936AB371E53394A00410F56 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				E936AB121E52F42E00410F56 /* AppDelegate.swift */,
+				E936AB171E52F42E00410F56 /* Assets.xcassets */,
+				E936AB1C1E52F42E00410F56 /* Info.plist */,
+				E936AB141E52F42E00410F56 /* VelikOS.xcdatamodeld */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E936AB0E1E52F42E00410F56 /* VelikOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E936AB1F1E52F42E00410F56 /* Build configuration list for PBXNativeTarget "VelikOS" */;
+			buildPhases = (
+				E936AB0B1E52F42E00410F56 /* Sources */,
+				E936AB0C1E52F42E00410F56 /* Frameworks */,
+				E936AB0D1E52F42E00410F56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VelikOS;
+			productName = VelikOS;
+			productReference = E936AB0F1E52F42E00410F56 /* VelikOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E936AB071E52F42E00410F56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Pavel Borisevich";
+				TargetAttributes = {
+					E936AB0E1E52F42E00410F56 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E936AB0A1E52F42E00410F56 /* Build configuration list for PBXProject "VelikOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E936AB061E52F42E00410F56;
+			productRefGroup = E936AB101E52F42E00410F56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E936AB0E1E52F42E00410F56 /* VelikOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E936AB0D1E52F42E00410F56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E936AB181E52F42E00410F56 /* Assets.xcassets in Resources */,
+				E936AB1B1E52F42E00410F56 /* MainMenu.xib in Resources */,
+				E936AB251E52F69200410F56 /* UserIdentifier.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E936AB0B1E52F42E00410F56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E936AB131E52F42E00410F56 /* AppDelegate.swift in Sources */,
+				E936AB281E52FC2300410F56 /* PBUserIdentifier.swift in Sources */,
+				E936AB231E52F51100410F56 /* PBCoreData.swift in Sources */,
+				E936AB301E53011300410F56 /* PBMainMenu.swift in Sources */,
+				E936AB331E53370500410F56 /* PBPrevFrame.swift in Sources */,
+				E936AB161E52F42E00410F56 /* VelikOS.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E936AB191E52F42E00410F56 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E936AB1A1E52F42E00410F56 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E936AB1D1E52F42E00410F56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E936AB1E1E52F42E00410F56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		E936AB201E52F42E00410F56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = VelikOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.borisevich.VelikOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E936AB211E52F42E00410F56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = VelikOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.borisevich.VelikOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E936AB0A1E52F42E00410F56 /* Build configuration list for PBXProject "VelikOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E936AB1D1E52F42E00410F56 /* Debug */,
+				E936AB1E1E52F42E00410F56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E936AB1F1E52F42E00410F56 /* Build configuration list for PBXNativeTarget "VelikOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E936AB201E52F42E00410F56 /* Debug */,
+				E936AB211E52F42E00410F56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E936AB141E52F42E00410F56 /* VelikOS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E936AB151E52F42E00410F56 /* VelikOS.xcdatamodel */,
+			);
+			currentVersion = E936AB151E52F42E00410F56 /* VelikOS.xcdatamodel */;
+			path = VelikOS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E936AB071E52F42E00410F56 /* Project object */;
+}
