@@ -20,6 +20,9 @@ class PBMainMenu: NSWindowController {
     
     @IBAction func userPressed(_ sender: NSButton) {
         
+        PBBackendlessAPI.shared.userLogout()
+        PBBackendlessAPI.shared.setNeedToStayLogged(needToStayLogged: false)
+        
         let controller = PBUserIdentifier(windowNibName: "UserIdentifier")
         
         PBPrevFrame.shared.frame = window?.frame

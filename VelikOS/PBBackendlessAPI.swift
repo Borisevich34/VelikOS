@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Cocoa
+
 class PBBackendlessAPI {
     
     let APP_ID = "204914E5-38EB-6319-FF36-0C1EE7666C00"
@@ -21,41 +23,55 @@ class PBBackendlessAPI {
     init() {
         backendless?.initApp(APP_ID, secret: SECRET_KEY, version: VERSION_NUM)
         
-        //backendless?.userService.registering(user)
-        
         // If you plan to use Backendless Media Service, uncomment the following line (iOS ONLY!)
         // backendless.mediaService = MediaService()
     }
     
-    func registerUserWithEmail(nickname: String, email: String, password: String) -> Bool {
-        
-        let user: BackendlessUser = BackendlessUser()
-        user.email = email as NSString
-        user.password = password as NSString
-        
-        return true
+    func syncRegisterUserWithProperties(properties: [String : Any]) -> Fault? {
+
+        var fault : Fault? = nil
+        let user = BackendlessUser(properties: properties)
+        _ = backendless?.userService.registering(user, error: &fault)
+
+        return fault
     }
 
-    func retrieveUserEntityProperties() {
-        let responder = PBResponder()
-        responder.settingHandler = { (response) in
-            if let properties = response as? NSArray {
-                print(properties)
-            }
-            return response
+    //Нужно не сразу логинить а потом проверять платформу, а сначала проверить пользователя
+    func syncLoginUser(email: String, password: String, isNeedToRemember: Bool) -> Fault? {
+        var fault : Fault? = nil
+        guard let user = backendless?.userService.login(email, password: password, error: &fault) else {
+            return fault
         }
-        
-        //userProperties
-        
-        backendless?.userService.describeUserClass(responder)
-        
-        //    -(id)responseHandler:(id)response;
-        //    {
-        //    NSArray *properties = (NSArray *)response;
-        //    NSLog(@"properties = %@, properties);
-        //    return properties;
-        //}
-        
+        guard let platform = user.getProperty("platform") as? String else {
+            //MARK - need to logout
+            var logoutFault : Fault? = nil
+            _ = backendless?.userService.logoutError(&logoutFault)
+            return Fault(message: "!!!!Paste later!!!!")   //MARK - to do
+        }
+        if platform != "osx" {
+            //MARK - need to logout
+            var logoutFault : Fault? = nil
+            _ = backendless?.userService.logoutError(&logoutFault)
+            fault = Fault(message: "!!!!Paste later!!!!")   //MARK - to do
+        }
+        else {
+            backendless?.userService.setStayLoggedIn(isNeedToRemember)
+        }
+        return fault
+    }
+    
+    func setNeedToStayLogged(needToStayLogged: Bool) {
+        backendless?.userService.setStayLoggedIn(needToStayLogged)
+    }
+    
+    func isNeedToStayLogged() -> Bool? {
+        return backendless?.userService.isStayLoggedIn
+    }
+    
+    func userLogout() {
+        var logoutFault : Fault? = nil
+        _ = backendless?.userService.logoutError(&logoutFault)
+        print("breakpoint")
     }
     
 }

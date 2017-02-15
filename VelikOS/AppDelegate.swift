@@ -19,7 +19,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        
+        guard let isNeedToStayLogged = PBBackendlessAPI.shared.isNeedToStayLogged() else {
+            return
+        }
+        if !isNeedToStayLogged {
+            PBBackendlessAPI.shared.userLogout()
+        }
     }
 }
 
