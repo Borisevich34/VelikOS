@@ -20,6 +20,9 @@
 		E936AB391E533E3800410F56 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E936AB381E533E3800410F56 /* Podfile */; };
 		E936AB3B1E5345F300410F56 /* PBBackendlessAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB3A1E5345F300410F56 /* PBBackendlessAPI.swift */; };
 		E936AB3D1E534E8800410F56 /* PBResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB3C1E534E8800410F56 /* PBResponder.swift */; };
+		E98DB2481E55AA28007FE266 /* Strore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98DB2471E55AA28007FE266 /* Strore.swift */; };
+		E98DB24A1E55AC42007FE266 /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98DB2491E55AC42007FE266 /* Cycle.swift */; };
+		E98DB24C1E55B513007FE266 /* PBCheckGeolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98DB24B1E55B513007FE266 /* PBCheckGeolocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		E936AB381E533E3800410F56 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		E936AB3A1E5345F300410F56 /* PBBackendlessAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBBackendlessAPI.swift; sourceTree = "<group>"; };
 		E936AB3C1E534E8800410F56 /* PBResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBResponder.swift; sourceTree = "<group>"; };
+		E98DB2471E55AA28007FE266 /* Strore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strore.swift; sourceTree = "<group>"; };
+		E98DB2491E55AC42007FE266 /* Cycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cycle.swift; sourceTree = "<group>"; };
+		E98DB24B1E55B513007FE266 /* PBCheckGeolocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBCheckGeolocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,7 @@
 		E936AB111E52F42E00410F56 /* VelikOS */ = {
 			isa = PBXGroup;
 			children = (
+				E98DB2461E55A869007FE266 /* Entities */,
 				E936AB311E5336EA00410F56 /* Helpers */,
 				E936AB351E53391A00410F56 /* Controllers */,
 				E936AB361E53392A00410F56 /* Interface */,
@@ -108,6 +115,7 @@
 				E936AB221E52F51100410F56 /* PBCoreData.swift */,
 				E936AB3A1E5345F300410F56 /* PBBackendlessAPI.swift */,
 				E936AB3C1E534E8800410F56 /* PBResponder.swift */,
+				E98DB24B1E55B513007FE266 /* PBCheckGeolocation.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -139,6 +147,15 @@
 				E936AB141E52F42E00410F56 /* VelikOS.xcdatamodeld */,
 			);
 			name = Other;
+			sourceTree = "<group>";
+		};
+		E98DB2461E55A869007FE266 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E98DB2471E55AA28007FE266 /* Strore.swift */,
+				E98DB2491E55AC42007FE266 /* Cycle.swift */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,8 +288,11 @@
 				E936AB231E52F51100410F56 /* PBCoreData.swift in Sources */,
 				E936AB301E53011300410F56 /* PBMainMenu.swift in Sources */,
 				E936AB331E53370500410F56 /* PBPrevFrame.swift in Sources */,
+				E98DB24A1E55AC42007FE266 /* Cycle.swift in Sources */,
+				E98DB24C1E55B513007FE266 /* PBCheckGeolocation.swift in Sources */,
 				E936AB3B1E5345F300410F56 /* PBBackendlessAPI.swift in Sources */,
 				E936AB161E52F42E00410F56 /* VelikOS.xcdatamodeld in Sources */,
+				E98DB2481E55AA28007FE266 /* Strore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

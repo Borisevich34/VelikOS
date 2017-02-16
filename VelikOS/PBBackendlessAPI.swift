@@ -74,4 +74,9 @@ class PBBackendlessAPI {
         print("breakpoint")
     }
     
+    func currentUser() -> BackendlessUser? {
+        let user = backendless?.userService.currentUser
+        return user
+    }
+    
 }
