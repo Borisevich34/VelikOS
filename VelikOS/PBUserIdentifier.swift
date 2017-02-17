@@ -13,10 +13,6 @@ class PBUserIdentifier: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
 
-//        if let oldFrame = PBPrevFrame.shared.frame {
-//            window?.setFrame(oldFrame, display: true)
-//        }
-        
         guard let isNeedToStayLogged = PBBackendlessAPI.shared.isNeedToStayLogged() else {
             return
         }
@@ -51,11 +47,11 @@ class PBUserIdentifier: NSWindowController {
             runSheetAlert(messageText: "Location error", informativeText: "Location fields should be double")
             return
         }
-        
         if !PBCheckGeolocation.shared.checkGeolocation(latitude: latitude, longitude: longitude) {
             runSheetAlert(messageText: "Location error", informativeText: "Your location isn't in availible area")
             return
         }
+        
         if rPassword.stringValue != rRepeatPass.stringValue {
             runSheetAlert(messageText: "Repeated password is wrong", informativeText: "Please try to input password again")
         }
@@ -65,10 +61,9 @@ class PBUserIdentifier: NSWindowController {
             properties["password"] = rPassword.stringValue
             properties["email"] = rEmail.stringValue
             properties["platform"] = "osx"
-            properties["store"] = Store(latitude: latitude, longitude: longitude)
+            properties["store"] = Store()
         
-            guard let fault = PBBackendlessAPI.shared.syncRegisterUserWithProperties(properties: properties) else {
-                
+            guard let fault = PBBackendlessAPI.shared.syncRegisterUserWithProperties(properties, latitude: latitude, longitude: longitude) else {
                 tabView.selectTabViewItem(at: 0)
                 return
             }
@@ -99,10 +94,8 @@ class PBUserIdentifier: NSWindowController {
     }
     
     private func openMainMenu() {
+        
         let controller = PBMainMenu(windowNibName: "MainMenu")
-        
-        //PBPrevFrame.shared.frame = window?.frame
-        
         controller.loadWindow()
         controller.loadCustomElements()
         

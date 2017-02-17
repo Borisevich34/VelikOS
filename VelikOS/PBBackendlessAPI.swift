@@ -27,13 +27,29 @@ class PBBackendlessAPI {
         // backendless.mediaService = MediaService()
     }
     
-    func syncRegisterUserWithProperties(properties: [String : Any]) -> Fault? {
+    func syncRegisterUserWithProperties(_ properties: [String : Any], latitude: Double, longitude: Double) -> Fault? {
 
         var fault : Fault? = nil
         let user = BackendlessUser(properties: properties)
-        _ = backendless?.userService.registering(user, error: &fault)
+        let registredUser = backendless?.userService.registering(user, error: &fault)
+        
+        //---
+        if let store = loadCurrentStore(userWithoutLoadedStore: registredUser, relations: nil) {
+            var testFault : Fault? = nil
+            store.geopoint = GeoPoint(point: GEO_POINT(latitude: latitude, longitude: longitude), categories: ["Default"], metadata: ["store": store])
+            if (PBBackendlessAPI.shared.backendless?.persistenceService.update(store, error: &testFault)) == nil {
+                print(testFault?.message ?? "Fault")
+            }
+        }
+        //---
 
         return fault
+    }
+
+    func loadCurrentStore(userWithoutLoadedStore: BackendlessUser?, relations: [String]?) -> Store? {
+        var fault : Fault? = nil
+        let userWithLoadedStore = PBBackendlessAPI.shared.backendless?.persistenceService.load(userWithoutLoadedStore, relations: (relations ?? ["store"]), error: &fault) as? BackendlessUser
+        return userWithLoadedStore?.getProperty("store") as? Store
     }
 
     //Нужно не сразу логинить а потом проверять платформу, а сначала проверить пользователя

@@ -18,13 +18,14 @@ class PBMainMenu: NSWindowController {
     
     @IBOutlet weak var sLatitude: NSTextField!
     @IBOutlet weak var sLongitude: NSTextField!
+    @IBOutlet weak var sStoreInformation: NSTextField!
     
     override func windowDidLoad() {
         super.windowDidLoad()
-
-//        if let oldFrame = PBPrevFrame.shared.frame {
-//            window?.setFrame(oldFrame, display: true)
-//        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
     
     func loadCustomElements() {
@@ -53,7 +54,7 @@ class PBMainMenu: NSWindowController {
         mapView.selectAnnotation(annotation, animated: true)
         
         sLatitude.stringValue = location.latitude.stringValue
-        sLongitude.stringValue = location.latitude.stringValue
+        sLongitude.stringValue = location.longitude.stringValue
     }
     
     @IBAction func userPressed(_ sender: NSButton) {
@@ -62,14 +63,65 @@ class PBMainMenu: NSWindowController {
         PBBackendlessAPI.shared.setNeedToStayLogged(needToStayLogged: false)
         
         let controller = PBUserIdentifier(windowNibName: "UserIdentifier")
-        
-        //PBPrevFrame.shared.frame = window?.frame
-        
         controller.loadWindow()
         
         self.window?.isReleasedWhenClosed = true
         self.window?.close()
         self.window = nil
+    }
+    @IBAction func sSetLocation(_ sender: Any) {
+
+        let currentUser = PBBackendlessAPI.shared.currentUser()
+        if let store = PBBackendlessAPI.shared.loadCurrentStore(userWithoutLoadedStore: currentUser, relations: nil) { //["store", "store.geopoint"]
+            print(sLatitude.stringValue)
+            guard let latitude = Double(sLatitude.stringValue) else {
+                runSheetAlert(messageText: "Location error", informativeText: "Location fields should be double")
+                retrieveCoordinates()
+                return
+            }
+            guard let longitude = Double(sLongitude.stringValue) else {
+                runSheetAlert(messageText: "Location error", informativeText: "Location fields should be double")
+                retrieveCoordinates()
+                return
+            }
+            if !PBCheckGeolocation.shared.checkGeolocation(latitude: latitude, longitude: longitude) {
+                runSheetAlert(messageText: "Location error", informativeText: "Your location isn't in availible area")
+                retrieveCoordinates()
+                return
+            }
+            
+            var fault : Fault? = nil
+            store.geopoint = GeoPoint(point: GEO_POINT(latitude: latitude, longitude: longitude), categories: ["Default"], metadata: ["store": store])
+            if (PBBackendlessAPI.shared.backendless?.persistenceService.update(store, error: &fault)) == nil {
+                retrieveCoordinates()
+                runSheetAlert(messageText: "Location error", informativeText: (fault?.message ?? "Fault"))
+            }
+            else {
+                geopoint = store.geopoint
+            }
+        }
+    }
+    
+    @IBAction func sChange(_ sender: Any) {
+    }
+
+    private func runSheetAlert(messageText: String, informativeText: String) {
+        if let windowForSheet = window {
+            let alert = NSAlert()
+            alert.messageText = messageText
+            alert.informativeText = informativeText
+            alert.addButton(withTitle: "OK")
+            alert.beginSheetModal(for: windowForSheet, completionHandler: nil)
+        }
+    }
+    
+    private func retrieveCoordinates() {
+        if let latitude : String = geopoint?.latitude.stringValue {
+            sLatitude.stringValue = latitude
+        }
+        if let longitude : String = geopoint?.longitude.stringValue {
+            sLongitude.stringValue = longitude
+        }
     }
 }
 
