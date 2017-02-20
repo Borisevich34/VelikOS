@@ -12,15 +12,19 @@ import MapKit
 class PBMainMenu: NSWindowController {
 
     @IBOutlet weak var userName: NSTextField!
+    
+    //Store
     @IBOutlet weak var mapView: MKMapView!
     var geopoint : GeoPoint?
     var wrappedStore : Store?
-    
     @IBOutlet weak var sLatitude: NSTextField!
     @IBOutlet weak var sLongitude: NSTextField!
-    
     var sPrevStoreInformation: String?
     @IBOutlet weak var sStoreInformation: NSTextField!
+    
+    //Cycles
+    let cCycles = NSMutableArray(objects: "Aist 1020", "Stels Black", "BMX-10")
+    
     
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -165,4 +169,19 @@ class PBMainMenu: NSWindowController {
 
 extension PBMainMenu : MKMapViewDelegate {
     
+}
+
+extension PBMainMenu : NSTableViewDelegate, NSTableViewDataSource {
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return cCycles.count
+    }
+    
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        var cellView: NSTableCellView? = nil
+        if tableColumn?.identifier == "AutomaticTableColumnIdentifier.0" {
+            cellView = tableView.make(withIdentifier: "Cycle", owner: self) as? NSTableCellView
+            cellView?.textField?.stringValue = (cCycles.object(at: row) as? String) ?? "Cycle"
+        }
+        return cellView
+    }
 }

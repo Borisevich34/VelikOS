@@ -28,12 +28,12 @@
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
                             <tabViewItem label="Login" identifier="1" id="xvN-xD-Lsm">
-                                <view key="view" id="Soy-Hz-v8E">
-                                    <rect key="frame" x="10" y="7" width="130" height="0.0"/>
+                                <view key="view" ambiguous="YES" id="Soy-Hz-v8E">
+                                    <rect key="frame" x="10" y="7" width="434" height="347"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzI-dS-RUl">
-                                            <rect key="frame" x="117" y="-230" width="200" height="22"/>
+                                            <rect key="frame" x="117" y="117" width="200" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Email" drawsBackground="YES" id="dhO-CS-o09">
                                                 <font key="font" metaFont="system"/>
@@ -42,7 +42,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iKf-Ku-gWN">
-                                            <rect key="frame" x="117" y="-262" width="200" height="22"/>
+                                            <rect key="frame" x="117" y="85" width="200" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Password" drawsBackground="YES" usesSingleLineMode="YES" id="B3I-pI-cey">
                                                 <font key="font" metaFont="system"/>
@@ -54,7 +54,7 @@
                                             </secureTextFieldCell>
                                         </secureTextField>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jDW-4m-Pav">
-                                            <rect key="frame" x="203" y="-290" width="110" height="25"/>
+                                            <rect key="frame" x="203" y="57" width="110" height="25"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Remember me" bezelStyle="regularSquare" imagePosition="left" alignment="center" state="on" inset="2" id="0v9-76-idG">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -62,7 +62,7 @@
                                             </buttonCell>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ODG-Yh-hyo">
-                                            <rect key="frame" x="122" y="-295" width="81" height="32"/>
+                                            <rect key="frame" x="122" y="52" width="81" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="Done" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CX5-oa-gZw">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -73,7 +73,7 @@
                                             </connections>
                                         </button>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xf9-16-UAZ">
-                                            <rect key="frame" x="167" y="-171" width="100" height="100"/>
+                                            <rect key="frame" x="167" y="176" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="AX0-TZ-aaV"/>
                                         </imageView>
@@ -81,7 +81,7 @@
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="Registration" identifier="2" id="Hq0-yP-Nwa">
-                                <view key="view" ambiguous="YES" id="Tvm-r0-5Kw">
+                                <view key="view" id="Tvm-r0-5Kw">
                                     <rect key="frame" x="10" y="7" width="434" height="347"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
