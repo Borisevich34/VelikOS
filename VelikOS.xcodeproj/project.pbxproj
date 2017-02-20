@@ -16,13 +16,15 @@
 		E936AB251E52F69200410F56 /* UserIdentifier.xib in Resources */ = {isa = PBXBuildFile; fileRef = E936AB241E52F69200410F56 /* UserIdentifier.xib */; };
 		E936AB281E52FC2300410F56 /* PBUserIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB271E52FC2300410F56 /* PBUserIdentifier.swift */; };
 		E936AB301E53011300410F56 /* PBMainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB2F1E53011300410F56 /* PBMainMenu.swift */; };
-		E936AB331E53370500410F56 /* PBPrevFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB321E53370500410F56 /* PBPrevFrame.swift */; };
+		E936AB331E53370500410F56 /* PBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB321E53370500410F56 /* PBHelper.swift */; };
 		E936AB391E533E3800410F56 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E936AB381E533E3800410F56 /* Podfile */; };
 		E936AB3B1E5345F300410F56 /* PBBackendlessAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB3A1E5345F300410F56 /* PBBackendlessAPI.swift */; };
 		E936AB3D1E534E8800410F56 /* PBResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB3C1E534E8800410F56 /* PBResponder.swift */; };
 		E98DB2481E55AA28007FE266 /* Strore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98DB2471E55AA28007FE266 /* Strore.swift */; };
 		E98DB24A1E55AC42007FE266 /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98DB2491E55AC42007FE266 /* Cycle.swift */; };
 		E98DB24C1E55B513007FE266 /* PBCheckGeolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98DB24B1E55B513007FE266 /* PBCheckGeolocation.swift */; };
+		E9B315881E5B30B200FEE9FB /* AddCycles.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9B315871E5B30B200FEE9FB /* AddCycles.xib */; };
+		E9B3158A1E5B3DA100FEE9FB /* PBAddCycles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B315891E5B3DA100FEE9FB /* PBAddCycles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,13 +41,15 @@
 		E936AB241E52F69200410F56 /* UserIdentifier.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserIdentifier.xib; sourceTree = "<group>"; };
 		E936AB271E52FC2300410F56 /* PBUserIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBUserIdentifier.swift; sourceTree = "<group>"; };
 		E936AB2F1E53011300410F56 /* PBMainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBMainMenu.swift; sourceTree = "<group>"; };
-		E936AB321E53370500410F56 /* PBPrevFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBPrevFrame.swift; sourceTree = "<group>"; };
+		E936AB321E53370500410F56 /* PBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBHelper.swift; sourceTree = "<group>"; };
 		E936AB381E533E3800410F56 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		E936AB3A1E5345F300410F56 /* PBBackendlessAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBBackendlessAPI.swift; sourceTree = "<group>"; };
 		E936AB3C1E534E8800410F56 /* PBResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBResponder.swift; sourceTree = "<group>"; };
 		E98DB2471E55AA28007FE266 /* Strore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strore.swift; sourceTree = "<group>"; };
 		E98DB2491E55AC42007FE266 /* Cycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cycle.swift; sourceTree = "<group>"; };
 		E98DB24B1E55B513007FE266 /* PBCheckGeolocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBCheckGeolocation.swift; sourceTree = "<group>"; };
+		E9B315871E5B30B200FEE9FB /* AddCycles.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCycles.xib; sourceTree = "<group>"; };
+		E9B315891E5B3DA100FEE9FB /* PBAddCycles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBAddCycles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +115,7 @@
 		E936AB311E5336EA00410F56 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				E936AB321E53370500410F56 /* PBPrevFrame.swift */,
+				E936AB321E53370500410F56 /* PBHelper.swift */,
 				E936AB221E52F51100410F56 /* PBCoreData.swift */,
 				E936AB3A1E5345F300410F56 /* PBBackendlessAPI.swift */,
 				E936AB3C1E534E8800410F56 /* PBResponder.swift */,
@@ -123,6 +127,7 @@
 		E936AB351E53391A00410F56 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E9B315891E5B3DA100FEE9FB /* PBAddCycles.swift */,
 				E936AB2F1E53011300410F56 /* PBMainMenu.swift */,
 				E936AB271E52FC2300410F56 /* PBUserIdentifier.swift */,
 			);
@@ -133,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				E936AB191E52F42E00410F56 /* MainMenu.xib */,
+				E9B315871E5B30B200FEE9FB /* AddCycles.xib */,
 				E936AB241E52F69200410F56 /* UserIdentifier.xib */,
 			);
 			name = Interface;
@@ -220,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9B315881E5B30B200FEE9FB /* AddCycles.xib in Resources */,
 				E936AB181E52F42E00410F56 /* Assets.xcassets in Resources */,
 				E936AB1B1E52F42E00410F56 /* MainMenu.xib in Resources */,
 				E936AB391E533E3800410F56 /* Podfile in Resources */,
@@ -284,10 +291,11 @@
 			files = (
 				E936AB3D1E534E8800410F56 /* PBResponder.swift in Sources */,
 				E936AB131E52F42E00410F56 /* AppDelegate.swift in Sources */,
+				E9B3158A1E5B3DA100FEE9FB /* PBAddCycles.swift in Sources */,
 				E936AB281E52FC2300410F56 /* PBUserIdentifier.swift in Sources */,
 				E936AB231E52F51100410F56 /* PBCoreData.swift in Sources */,
 				E936AB301E53011300410F56 /* PBMainMenu.swift in Sources */,
-				E936AB331E53370500410F56 /* PBPrevFrame.swift in Sources */,
+				E936AB331E53370500410F56 /* PBHelper.swift in Sources */,
 				E98DB24A1E55AC42007FE266 /* Cycle.swift in Sources */,
 				E98DB24C1E55B513007FE266 /* PBCheckGeolocation.swift in Sources */,
 				E936AB3B1E5345F300410F56 /* PBBackendlessAPI.swift in Sources */,

@@ -77,6 +77,8 @@ class PBMainMenu: NSWindowController {
         self.window?.close()
         self.window = nil
     }
+    
+    //MARK - Store methods
     @IBAction func sSetLocation(_ sender: Any) {
 
         if let store = wrappedStore {
@@ -146,7 +148,7 @@ class PBMainMenu: NSWindowController {
             sStoreInformation.stringValue = sPrevStoreInformation ?? ""
         }
     }
-
+    
     private func runSheetAlert(messageText: String, informativeText: String) {
         if let windowForSheet = window {
             let alert = NSAlert()
@@ -165,6 +167,16 @@ class PBMainMenu: NSWindowController {
             sLongitude.stringValue = longitude
         }
     }
+    
+    //Cycles
+    @IBAction func cAdd(_ sender: NSButton) {
+        if let unwrappedWindow = window {
+            PBHelper.shared.window = unwrappedWindow
+        }
+        let controller = PBAddCycles(windowNibName: "AddCycles")
+        controller.loadWindow()
+    }
+    
 }
 
 extension PBMainMenu : MKMapViewDelegate {
@@ -181,6 +193,9 @@ extension PBMainMenu : NSTableViewDelegate, NSTableViewDataSource {
         if tableColumn?.identifier == "AutomaticTableColumnIdentifier.0" {
             cellView = tableView.make(withIdentifier: "Cycle", owner: self) as? NSTableCellView
             cellView?.textField?.stringValue = (cCycles.object(at: row) as? String) ?? "Cycle"
+        }
+        if tableColumn?.identifier == "AutomaticTableColumnIdentifier.1" {
+            cellView = tableView.make(withIdentifier: "State", owner: self) as? NSTableCellView
         }
         return cellView
     }

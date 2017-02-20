@@ -6,10 +6,6 @@
 //  Copyright © 2017 Pavel Borisevich. All rights reserved.
 //
 
-
-
-//  53.84746343692341 27.50530242919922
-
 import Foundation
 class Store: NSObject {
     
