@@ -14,10 +14,12 @@ class PBMainMenu: NSWindowController {
     @IBOutlet weak var userName: NSTextField!
     @IBOutlet weak var mapView: MKMapView!
     var geopoint : GeoPoint?
-    
+    var wrappedStore : Store?
     
     @IBOutlet weak var sLatitude: NSTextField!
     @IBOutlet weak var sLongitude: NSTextField!
+    
+    var sPrevStoreInformation: String?
     @IBOutlet weak var sStoreInformation: NSTextField!
     
     override func windowDidLoad() {
@@ -32,13 +34,13 @@ class PBMainMenu: NSWindowController {
         
         if let user = PBBackendlessAPI.shared.currentUser() {
             userName.stringValue = user.name as String
-            var fault : Fault? = nil
-            _ = PBBackendlessAPI.shared.backendless?.persistenceService.load(user, relations: ["store", "store.geopoint"], error: &fault)
-            if let userGeopoint = (user.getProperty("store") as? Store)?.geopoint {
-                geopoint = userGeopoint
+            wrappedStore = PBBackendlessAPI.shared.loadCurrentStore(userWithoutLoadedStore: user, relations: ["store", "store.geopoint"])
+            if let storeGeopoint = wrappedStore?.geopoint {
+                geopoint = storeGeopoint
             }
-            else {
-                print(fault?.message ?? "Optional")
+            if let info = (wrappedStore?.information as? String)?.trimmingCharacters(in: [" "]) {
+                sStoreInformation.stringValue = info
+                sPrevStoreInformation = info
             }
         }
         
@@ -55,6 +57,8 @@ class PBMainMenu: NSWindowController {
         
         sLatitude.stringValue = location.latitude.stringValue
         sLongitude.stringValue = location.longitude.stringValue
+        
+        
     }
     
     @IBAction func userPressed(_ sender: NSButton) {
@@ -71,9 +75,9 @@ class PBMainMenu: NSWindowController {
     }
     @IBAction func sSetLocation(_ sender: Any) {
 
-        let currentUser = PBBackendlessAPI.shared.currentUser()
-        if let store = PBBackendlessAPI.shared.loadCurrentStore(userWithoutLoadedStore: currentUser, relations: nil) { //["store", "store.geopoint"]
-            print(sLatitude.stringValue)
+        if let store = wrappedStore {
+            var theFault : Fault? = nil
+            PBBackendlessAPI.shared.backendless?.geoService.remove(store.geopoint, error: &theFault)
             guard let latitude = Double(sLatitude.stringValue) else {
                 runSheetAlert(messageText: "Location error", informativeText: "Location fields should be double")
                 retrieveCoordinates()
@@ -89,20 +93,54 @@ class PBMainMenu: NSWindowController {
                 retrieveCoordinates()
                 return
             }
-            
             var fault : Fault? = nil
             store.geopoint = GeoPoint(point: GEO_POINT(latitude: latitude, longitude: longitude), categories: ["Default"], metadata: ["store": store])
-            if (PBBackendlessAPI.shared.backendless?.persistenceService.update(store, error: &fault)) == nil {
+            wrappedStore = PBBackendlessAPI.shared.backendless?.persistenceService.update(store, error: &fault) as? Store
+            if wrappedStore == nil {
                 retrieveCoordinates()
                 runSheetAlert(messageText: "Location error", informativeText: (fault?.message ?? "Fault"))
             }
             else {
                 geopoint = store.geopoint
+                guard let location = geopoint else {
+                    return
+                }
+                let annotation = MKPointAnnotation()
+                annotation.title = "Your store location"
+                annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude.doubleValue, longitude: location.longitude.doubleValue)
+                mapView.showAnnotations([annotation], animated: true)
+                mapView.selectAnnotation(annotation, animated: true)
+                sLatitude.stringValue = location.latitude.stringValue
+                sLongitude.stringValue = location.longitude.stringValue
             }
+        }
+        else {
+            let currentUser = PBBackendlessAPI.shared.currentUser()
+            wrappedStore = PBBackendlessAPI.shared.loadCurrentStore(userWithoutLoadedStore: currentUser, relations: ["store", "store.geopoint"])
+            runSheetAlert(messageText: "Please try again", informativeText: "Need to load some data")
+            retrieveCoordinates()
         }
     }
     
     @IBAction func sChange(_ sender: Any) {
+        if let store = wrappedStore {
+            store.information = sStoreInformation.stringValue as NSString?
+            var fault : Fault? = nil
+            wrappedStore = PBBackendlessAPI.shared.backendless?.persistenceService.update(store, error: &fault) as? Store
+            if wrappedStore == nil {
+                runSheetAlert(messageText: "Setting information error", informativeText: fault?.message ?? "Setting information error")
+                sStoreInformation.stringValue = sPrevStoreInformation ?? ""
+            }
+            else {
+                sPrevStoreInformation = sStoreInformation.stringValue
+            }
+        }
+        else {
+            let currentUser = PBBackendlessAPI.shared.currentUser()
+            wrappedStore = PBBackendlessAPI.shared.loadCurrentStore(userWithoutLoadedStore: currentUser, relations: ["store", "store.geopoint"])
+            runSheetAlert(messageText: "Please try again", informativeText: "Need to load some data")
+            sStoreInformation.stringValue = sPrevStoreInformation ?? ""
+        }
     }
 
     private func runSheetAlert(messageText: String, informativeText: String) {

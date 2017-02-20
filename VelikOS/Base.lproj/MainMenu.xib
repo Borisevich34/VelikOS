@@ -195,6 +195,11 @@ Working time.</string>
         </customObject>
         <viewController nibName="MainMenu" id="HP0-f2-EEn" customClass="PBMainMenu" customModule="VelikOS" customModuleProvider="target">
             <connections>
+                <outlet property="mapView" destination="YsO-X6-pRs" id="a1p-0z-1Iq"/>
+                <outlet property="sLatitude" destination="4kE-X0-KV0" id="8vE-Qw-LJF"/>
+                <outlet property="sLongitude" destination="Q8K-ra-6Sj" id="lEO-F1-6hA"/>
+                <outlet property="sStoreInformation" destination="8bU-cw-zIK" id="P4H-XR-nTF"/>
+                <outlet property="userName" destination="XR2-F0-eD5" id="dt6-YT-Dfm"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="R7f-mV-ogm"/>
             </connections>
         </viewController>

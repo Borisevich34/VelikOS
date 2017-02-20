@@ -16,6 +16,7 @@ class Store: NSObject {
     var objectId : NSString?
     var cycles : NSMutableArray?
     var geopoint : GeoPoint?
+    var information : NSString?
     
     override init() {
         super.init()

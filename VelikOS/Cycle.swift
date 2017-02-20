@@ -10,6 +10,7 @@ import Foundation
 class Cycle: NSObject {
     
     var state : NSString?
+    var objectId : NSString?
     
     override init() {
         super.init()
