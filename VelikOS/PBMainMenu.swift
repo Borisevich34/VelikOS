@@ -37,7 +37,7 @@ class PBMainMenu: NSWindowController {
         
         if let user = PBBackendlessAPI.shared.currentUser() {
             userName.stringValue = user.name as String
-            wrappedStore = PBBackendlessAPI.shared.loadCurrentStore(user, relations: ["store", "store.geopoint", "store.cycles", ""])
+            wrappedStore = PBBackendlessAPI.shared.loadCurrentStore(user, relations: ["store", "store.geopoint", "store.cycles"])
             if let storeGeopoint = wrappedStore?.geopoint {
                 geopoint = storeGeopoint
             }
@@ -67,11 +67,22 @@ class PBMainMenu: NSWindowController {
                 let unwrappedCycle = cycle as! Cycle
                 unwrappedCycle.user = (PBBackendlessAPI.shared.backendless?.persistenceService.load(unwrappedCycle, relations: ["cycle.user"], error: &fault) as? Cycle)?.user
             }
-            PBHelper.shared.cycles = cycles
+            PBCyclesResponder.shared.cycles = cycles
             tableOfCycles.reloadData()
         }
+        
+        //MARK - Messaging subscribe
+        guard let storeChannel = wrappedStore?.objectId as String? else {
+            return
+        }
+        let subscriptionOptions = SubscriptionOptions()
+        var fault : Fault? = nil
+        PBCyclesResponder.shared.delegate = self
+        PBCyclesResponder.shared.subscription = PBBackendlessAPI.shared.backendless?.messagingService.subscribe(storeChannel, subscriptionResponder: PBCyclesResponder.shared, subscriptionOptions: subscriptionOptions, error: &fault)
+        print(fault?.message ?? "Fault")
     }
     
+    //MARK - cancel subscribe
     @IBAction func userPressed(_ sender: NSButton) {
 
         PBBackendlessAPI.shared.userLogout()
@@ -178,7 +189,7 @@ class PBMainMenu: NSWindowController {
     //Cycles
     @IBAction func cAdd(_ sender: NSButton) {
         if let unwrappedWindow = window {
-            PBHelper.shared.window = unwrappedWindow
+            PBWindowHelper.shared.window = unwrappedWindow
         }
         let controller = PBAddCycles(windowNibName: "AddCycles")
         controller.loadWindow()
@@ -194,14 +205,14 @@ extension PBMainMenu : NSTableViewDelegate, NSTableViewDataSource {
     
     //Cycles
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return PBHelper.shared.cycles.count
+        return PBCyclesResponder.shared.cycles.count
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         guard let columnIdentifier = tableColumn?.identifier else {
             return nil
         }
-        guard let cycle = PBHelper.shared.cycles.object(at: row) as? Cycle else {
+        guard let cycle = PBCyclesResponder.shared.cycles.object(at: row) as? Cycle else {
             return nil
         }
         

@@ -127,7 +127,7 @@
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
                                                                             <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xlO-dS-dZA">
-                                                                                <rect key="frame" x="3" y="-1" width="99" height="26"/>
+                                                                                <rect key="frame" x="3" y="-1" width="99" height="23"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                                 <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" placeholderString="In use" drawsBackground="YES" completes="NO" numberOfVisibleItems="3" id="9qg-GU-0f5">
                                                                                     <font key="font" metaFont="system"/>

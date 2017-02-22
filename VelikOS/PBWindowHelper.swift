@@ -8,12 +8,10 @@
 
 import Cocoa
 
-class PBHelper {
+class PBWindowHelper {
     
-    static var shared = PBHelper()
-    var frame: CGRect?
+    static var shared = PBWindowHelper()
     weak var window: NSWindow?
-    var cycles = NSMutableArray()
     
     public func openFromHelpWindow(sheetWindow: NSWindow) {
         window?.beginSheet(sheetWindow, completionHandler: nil)

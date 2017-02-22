@@ -23,7 +23,7 @@ class PBAddCycles: NSWindowController {
         super.windowDidLoad()
         
         if let unwrappedWindow = window {
-            PBHelper.shared.openFromHelpWindow(sheetWindow: unwrappedWindow)
+            PBWindowHelper.shared.openFromHelpWindow(sheetWindow: unwrappedWindow)
         }
         
     }
@@ -100,6 +100,5 @@ class PBAddCycles: NSWindowController {
         _ = PBBackendlessAPI.shared.backendless?.persistenceService.update(store, error: &fault)
         print(fault?.message ?? "Fault")
         print(fault?.faultCode ?? "Fault")
-        
     }
 }
