@@ -9,23 +9,45 @@
 import Foundation
 
 enum CycleState: Int {
+    case unavailible
+    case free
     case waiting
     case inUse
-    case free
-    case unavailible
 }
 
 class Cycle: NSObject {
     
-    var state : NSString? = "unavailible"
+    var state : NSNumber?
     var objectId : NSString?
-    var startsUse : NSNumber?
-    var endsUse : NSNumber?
-    var info : NSString?
-    var images : NSMutableArray?
-    var priceForHouar : NSNumber?
+    
+    var timePeriod : NSString?
+    var orderTime : NSString?
+    
+    var name : NSString?
+    var information : NSString?
+    var pricePerHouar : NSNumber?
+    var user : BackendlessUser?
+    
+    var firstImage : NSString?
+    var secondImage : NSString?
+    var thirdImage : NSString?
     
     override init() {
+        super.init()
+        state = 0
+    }
+    
+    init(_ cycleName: String, info: String, price: Double, firstUrl: String?, secondUrl: String?, thirdUrl: String?) {
+        state = 0
+        
+        name = cycleName as NSString
+        information = info as NSString
+        pricePerHouar = NSNumber(value: price)
+        
+        firstImage = firstUrl as NSString?
+        secondImage = secondUrl as NSString?
+        thirdImage = thirdUrl as NSString?
+        
         super.init()
     }
 }

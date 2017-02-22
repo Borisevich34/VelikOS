@@ -20,6 +20,12 @@
 		E936AB391E533E3800410F56 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E936AB381E533E3800410F56 /* Podfile */; };
 		E936AB3B1E5345F300410F56 /* PBBackendlessAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB3A1E5345F300410F56 /* PBBackendlessAPI.swift */; };
 		E936AB3D1E534E8800410F56 /* PBResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB3C1E534E8800410F56 /* PBResponder.swift */; };
+		E971660C1E5C8011009F5B8A /* PBCellState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971660B1E5C8011009F5B8A /* PBCellState.swift */; };
+		E971660E1E5C807B009F5B8A /* PBCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971660D1E5C807B009F5B8A /* PBCellName.swift */; };
+		E97166101E5C80B1009F5B8A /* PBCellPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971660F1E5C80B1009F5B8A /* PBCellPeriod.swift */; };
+		E97166121E5C80C4009F5B8A /* PBCellUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97166111E5C80C4009F5B8A /* PBCellUser.swift */; };
+		E983268B1E5D815E00E9A2DE /* PBCellOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E983268A1E5D815E00E9A2DE /* PBCellOrder.swift */; };
+		E983268D1E5D816F00E9A2DE /* PBCellSaved.swift in Sources */ = {isa = PBXBuildFile; fileRef = E983268C1E5D816F00E9A2DE /* PBCellSaved.swift */; };
 		E98DB2481E55AA28007FE266 /* Strore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98DB2471E55AA28007FE266 /* Strore.swift */; };
 		E98DB24A1E55AC42007FE266 /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98DB2491E55AC42007FE266 /* Cycle.swift */; };
 		E98DB24C1E55B513007FE266 /* PBCheckGeolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98DB24B1E55B513007FE266 /* PBCheckGeolocation.swift */; };
@@ -45,6 +51,12 @@
 		E936AB381E533E3800410F56 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		E936AB3A1E5345F300410F56 /* PBBackendlessAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBBackendlessAPI.swift; sourceTree = "<group>"; };
 		E936AB3C1E534E8800410F56 /* PBResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBResponder.swift; sourceTree = "<group>"; };
+		E971660B1E5C8011009F5B8A /* PBCellState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBCellState.swift; sourceTree = "<group>"; };
+		E971660D1E5C807B009F5B8A /* PBCellName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBCellName.swift; sourceTree = "<group>"; };
+		E971660F1E5C80B1009F5B8A /* PBCellPeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBCellPeriod.swift; sourceTree = "<group>"; };
+		E97166111E5C80C4009F5B8A /* PBCellUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBCellUser.swift; sourceTree = "<group>"; };
+		E983268A1E5D815E00E9A2DE /* PBCellOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBCellOrder.swift; sourceTree = "<group>"; };
+		E983268C1E5D816F00E9A2DE /* PBCellSaved.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBCellSaved.swift; sourceTree = "<group>"; };
 		E98DB2471E55AA28007FE266 /* Strore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strore.swift; sourceTree = "<group>"; };
 		E98DB2491E55AC42007FE266 /* Cycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cycle.swift; sourceTree = "<group>"; };
 		E98DB24B1E55B513007FE266 /* PBCheckGeolocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBCheckGeolocation.swift; sourceTree = "<group>"; };
@@ -103,6 +115,7 @@
 		E936AB111E52F42E00410F56 /* VelikOS */ = {
 			isa = PBXGroup;
 			children = (
+				E971660A1E5C7F99009F5B8A /* CycleCells */,
 				E98DB2461E55A869007FE266 /* Entities */,
 				E936AB311E5336EA00410F56 /* Helpers */,
 				E936AB351E53391A00410F56 /* Controllers */,
@@ -153,6 +166,19 @@
 				E936AB141E52F42E00410F56 /* VelikOS.xcdatamodeld */,
 			);
 			name = Other;
+			sourceTree = "<group>";
+		};
+		E971660A1E5C7F99009F5B8A /* CycleCells */ = {
+			isa = PBXGroup;
+			children = (
+				E971660B1E5C8011009F5B8A /* PBCellState.swift */,
+				E971660D1E5C807B009F5B8A /* PBCellName.swift */,
+				E971660F1E5C80B1009F5B8A /* PBCellPeriod.swift */,
+				E97166111E5C80C4009F5B8A /* PBCellUser.swift */,
+				E983268A1E5D815E00E9A2DE /* PBCellOrder.swift */,
+				E983268C1E5D816F00E9A2DE /* PBCellSaved.swift */,
+			);
+			name = CycleCells;
 			sourceTree = "<group>";
 		};
 		E98DB2461E55A869007FE266 /* Entities */ = {
@@ -289,18 +315,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E971660E1E5C807B009F5B8A /* PBCellName.swift in Sources */,
+				E983268B1E5D815E00E9A2DE /* PBCellOrder.swift in Sources */,
 				E936AB3D1E534E8800410F56 /* PBResponder.swift in Sources */,
 				E936AB131E52F42E00410F56 /* AppDelegate.swift in Sources */,
 				E9B3158A1E5B3DA100FEE9FB /* PBAddCycles.swift in Sources */,
 				E936AB281E52FC2300410F56 /* PBUserIdentifier.swift in Sources */,
 				E936AB231E52F51100410F56 /* PBCoreData.swift in Sources */,
+				E97166101E5C80B1009F5B8A /* PBCellPeriod.swift in Sources */,
 				E936AB301E53011300410F56 /* PBMainMenu.swift in Sources */,
 				E936AB331E53370500410F56 /* PBHelper.swift in Sources */,
 				E98DB24A1E55AC42007FE266 /* Cycle.swift in Sources */,
 				E98DB24C1E55B513007FE266 /* PBCheckGeolocation.swift in Sources */,
 				E936AB3B1E5345F300410F56 /* PBBackendlessAPI.swift in Sources */,
+				E983268D1E5D816F00E9A2DE /* PBCellSaved.swift in Sources */,
+				E97166121E5C80C4009F5B8A /* PBCellUser.swift in Sources */,
 				E936AB161E52F42E00410F56 /* VelikOS.xcdatamodeld in Sources */,
 				E98DB2481E55AA28007FE266 /* Strore.swift in Sources */,
+				E971660C1E5C8011009F5B8A /* PBCellState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

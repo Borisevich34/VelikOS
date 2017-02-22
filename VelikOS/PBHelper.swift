@@ -13,6 +13,7 @@ class PBHelper {
     static var shared = PBHelper()
     var frame: CGRect?
     weak var window: NSWindow?
+    var cycles = NSMutableArray()
     
     public func openFromHelpWindow(sheetWindow: NSWindow) {
         window?.beginSheet(sheetWindow, completionHandler: nil)

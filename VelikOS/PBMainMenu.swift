@@ -23,9 +23,8 @@ class PBMainMenu: NSWindowController {
     @IBOutlet weak var sStoreInformation: NSTextField!
     
     //Cycles
-    let cCycles = NSMutableArray(objects: "Aist 1020", "Stels Black", "BMX-10")
-    
-    
+    @IBOutlet weak var tableOfCycles: NSTableView!
+
     override func windowDidLoad() {
         super.windowDidLoad()
     }
@@ -38,7 +37,7 @@ class PBMainMenu: NSWindowController {
         
         if let user = PBBackendlessAPI.shared.currentUser() {
             userName.stringValue = user.name as String
-            wrappedStore = PBBackendlessAPI.shared.loadCurrentStore(userWithoutLoadedStore: user, relations: ["store", "store.geopoint"])
+            wrappedStore = PBBackendlessAPI.shared.loadCurrentStore(user, relations: ["store", "store.geopoint", "store.cycles", ""])
             if let storeGeopoint = wrappedStore?.geopoint {
                 geopoint = storeGeopoint
             }
@@ -61,8 +60,16 @@ class PBMainMenu: NSWindowController {
         
         sLatitude.stringValue = location.latitude.stringValue
         sLongitude.stringValue = location.longitude.stringValue
-        
-        
+        if let cycles = wrappedStore?.cycles {
+            var fault : Fault?
+            for cycle in cycles {
+                fault = nil
+                let unwrappedCycle = cycle as! Cycle
+                unwrappedCycle.user = (PBBackendlessAPI.shared.backendless?.persistenceService.load(unwrappedCycle, relations: ["cycle.user"], error: &fault) as? Cycle)?.user
+            }
+            PBHelper.shared.cycles = cycles
+            tableOfCycles.reloadData()
+        }
     }
     
     @IBAction func userPressed(_ sender: NSButton) {
@@ -122,7 +129,7 @@ class PBMainMenu: NSWindowController {
         }
         else {
             let currentUser = PBBackendlessAPI.shared.currentUser()
-            wrappedStore = PBBackendlessAPI.shared.loadCurrentStore(userWithoutLoadedStore: currentUser, relations: ["store", "store.geopoint"])
+            wrappedStore = PBBackendlessAPI.shared.loadCurrentStore(currentUser, relations: ["store", "store.geopoint"])
             runSheetAlert(messageText: "Please try again", informativeText: "Need to load some data")
             retrieveCoordinates()
         }
@@ -143,7 +150,7 @@ class PBMainMenu: NSWindowController {
         }
         else {
             let currentUser = PBBackendlessAPI.shared.currentUser()
-            wrappedStore = PBBackendlessAPI.shared.loadCurrentStore(userWithoutLoadedStore: currentUser, relations: ["store", "store.geopoint"])
+            wrappedStore = PBBackendlessAPI.shared.loadCurrentStore(currentUser, relations: ["store", "store.geopoint"])
             runSheetAlert(messageText: "Please try again", informativeText: "Need to load some data")
             sStoreInformation.stringValue = sPrevStoreInformation ?? ""
         }
@@ -184,19 +191,60 @@ extension PBMainMenu : MKMapViewDelegate {
 }
 
 extension PBMainMenu : NSTableViewDelegate, NSTableViewDataSource {
+    
+    //Cycles
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return cCycles.count
+        return PBHelper.shared.cycles.count
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        var cellView: NSTableCellView? = nil
-        if tableColumn?.identifier == "AutomaticTableColumnIdentifier.0" {
-            cellView = tableView.make(withIdentifier: "Cycle", owner: self) as? NSTableCellView
-            cellView?.textField?.stringValue = (cCycles.object(at: row) as? String) ?? "Cycle"
+        guard let columnIdentifier = tableColumn?.identifier else {
+            return nil
         }
-        if tableColumn?.identifier == "AutomaticTableColumnIdentifier.1" {
-            cellView = tableView.make(withIdentifier: "State", owner: self) as? NSTableCellView
+        guard let cycle = PBHelper.shared.cycles.object(at: row) as? Cycle else {
+            return nil
         }
-        return cellView
+        
+        guard let name = cycle.name, let state = cycle.state?.intValue else {
+            return nil
+        }
+        
+        var columnView : NSView? = nil
+        switch columnIdentifier {
+        case "AutomaticTableColumnIdentifier.0":
+            let cellView = tableView.make(withIdentifier: "Name", owner: self) as? PBCellName
+            cellView?.label?.stringValue = name as String
+            columnView = cellView
+            break
+        case "AutomaticTableColumnIdentifier.1":
+            let cellView = tableView.make(withIdentifier: "State", owner: self) as? PBCellState
+            cellView?.comboBox?.selectItem(at: state)
+            columnView = cellView
+            break
+        case "AutomaticTableColumnIdentifier.2":
+            let cellView = tableView.make(withIdentifier: "Period", owner: self) as? PBCellPeriod
+            cellView?.label?.stringValue = (cycle.timePeriod as String?) ?? "---------------"
+            columnView = cellView
+            break
+        case "AutomaticTableColumnIdentifier.3":
+            let cellView = tableView.make(withIdentifier: "Order", owner: self) as? PBCellOrder
+            cellView?.label?.stringValue = (cycle.orderTime as String?) ?? "--------"
+            columnView = cellView
+            break
+        case "AutomaticTableColumnIdentifier.4":
+            let cellView = tableView.make(withIdentifier: "User", owner: self) as? PBCellUser
+            cellView?.label?.stringValue = (cycle.user?.email as String?) ?? "--------------------"
+            columnView = cellView
+            break
+        case "AutomaticTableColumnIdentifier.5":
+            let cellView = tableView.make(withIdentifier: "Saved", owner: self) as? PBCellSaved
+            cellView?.isSaved = true
+            columnView = cellView
+            break
+            
+        default:
+            break
+        }
+        return columnView
     }
 }

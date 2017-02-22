@@ -34,7 +34,7 @@ class PBBackendlessAPI {
         let registredUser = backendless?.userService.registering(user, error: &fault)
         
         //---
-        if let store = loadCurrentStore(userWithoutLoadedStore: registredUser, relations: nil) {
+        if let store = loadCurrentStore(registredUser, relations: nil) {
             var testFault : Fault? = nil
             store.geopoint = GeoPoint(point: GEO_POINT(latitude: latitude, longitude: longitude), categories: ["Default"], metadata: ["store": store])
             if (PBBackendlessAPI.shared.backendless?.persistenceService.update(store, error: &testFault)) == nil {
@@ -46,7 +46,7 @@ class PBBackendlessAPI {
         return fault
     }
 
-    func loadCurrentStore(userWithoutLoadedStore: BackendlessUser?, relations: [String]?) -> Store? {
+    func loadCurrentStore( _ userWithoutLoadedStore: BackendlessUser?, relations: [String]?) -> Store? {
         var fault : Fault? = nil
         let userWithLoadedStore = PBBackendlessAPI.shared.backendless?.persistenceService.load(userWithoutLoadedStore, relations: (relations ?? ["store"]), error: &fault) as? BackendlessUser
         return userWithLoadedStore?.getProperty("store") as? Store
