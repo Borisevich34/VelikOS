@@ -173,6 +173,7 @@ class PBAddCycles: NSWindowController {
         
         fault = nil
         _ = PBBackendlessAPI.shared.backendless?.persistenceService.update(store, error: &fault)
+        PBCyclesResponder.shared.cycles = store.cycles ?? NSMutableArray()
         print(fault?.message ?? "Fault")
         print(fault?.faultCode ?? "Fault")
     }

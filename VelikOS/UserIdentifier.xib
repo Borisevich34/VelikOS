@@ -28,7 +28,7 @@
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
                             <tabViewItem label="Login" identifier="1" id="xvN-xD-Lsm">
-                                <view key="view" ambiguous="YES" id="Soy-Hz-v8E">
+                                <view key="view" id="Soy-Hz-v8E">
                                     <rect key="frame" x="10" y="7" width="434" height="347"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -81,7 +81,7 @@
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="Registration" identifier="2" id="Hq0-yP-Nwa">
-                                <view key="view" id="Tvm-r0-5Kw">
+                                <view key="view" ambiguous="YES" id="Tvm-r0-5Kw">
                                     <rect key="frame" x="10" y="7" width="434" height="347"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
