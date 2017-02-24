@@ -174,11 +174,11 @@
 		E971660A1E5C7F99009F5B8A /* CycleCells */ = {
 			isa = PBXGroup;
 			children = (
-				E971660B1E5C8011009F5B8A /* PBCellState.swift */,
 				E971660D1E5C807B009F5B8A /* PBCellName.swift */,
+				E971660B1E5C8011009F5B8A /* PBCellState.swift */,
 				E971660F1E5C80B1009F5B8A /* PBCellPeriod.swift */,
-				E97166111E5C80C4009F5B8A /* PBCellUser.swift */,
 				E983268A1E5D815E00E9A2DE /* PBCellOrder.swift */,
+				E97166111E5C80C4009F5B8A /* PBCellUser.swift */,
 				E983268C1E5D816F00E9A2DE /* PBCellSaved.swift */,
 			);
 			name = CycleCells;

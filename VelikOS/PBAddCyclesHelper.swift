@@ -11,6 +11,9 @@ import Cocoa
 class PBAddCyclesHelper {
     
     static var shared = PBAddCyclesHelper()
+    weak var table : NSTableView?
+    var storeId : String?
+    
     weak var window: NSWindow?
     
     var cycle : Cycle?

@@ -19,6 +19,7 @@ class PBCyclesResponder : NSObject, IResponder {
     }
     
     func responseHandler(_ response: Any!) -> Any! {
+//        updateCycles()
         delegate?.tableOfCycles.reloadData()
         return nil
     }
@@ -30,4 +31,10 @@ class PBCyclesResponder : NSObject, IResponder {
     func cancelSubscribe() {
         subscription?.cancel()
     }
+    
+//    func updateCycles() {
+//        guard let user = PBBackendlessAPI.shared.currentUser(),
+//            let store = PBBackendlessAPI.shared.loadCurrentStore(user, relations:  ["store", "store.cycles"]) else { return }
+//        cycles = store.cycles ?? NSMutableArray()
+//    }
 }

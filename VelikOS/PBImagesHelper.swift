@@ -9,21 +9,6 @@
 import Cocoa
 class PBImagesHelper {
     
-    
-//    static func removeImages(_ cycle: Cycle?) {
-//        var fault : Fault? = nil
-//        
-//        if let firstPath = cycle?.firstImage {
-//            PBBackendlessAPI.shared.backendless?.fileService.remove(firstPath as String, error: &fault)
-//        }
-//        if let secondPath = cycle?.secondImage {
-//            PBBackendlessAPI.shared.backendless?.fileService.remove(secondPath as String, error: &fault)
-//        }
-//        if let thirdPath = cycle?.thirdImage {
-//            PBBackendlessAPI.shared.backendless?.fileService.remove(thirdPath as String, error: &fault)
-//        }
-//    }
-    
     static func removeImages(_ directoryPath: String) {
         var fault : Fault? = nil
         PBBackendlessAPI.shared.backendless?.fileService.removeDirectory(directoryPath, error: &fault)

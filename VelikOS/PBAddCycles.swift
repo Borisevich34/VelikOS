@@ -22,21 +22,30 @@ class PBAddCycles: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        if let unwrappedWindow = window {
-            PBAddCyclesHelper.shared.openFromHelperWindow(sheetWindow: unwrappedWindow)
-        }
         if let cycle = PBAddCyclesHelper.shared.cycle {
             let images : [Int : NSImage?] = PBImagesHelper.downloadImages(cycle)
             print("Ok")
-//            if let firstImageFromDictionary = images[0] {
-//                //firstImage.image = firstImageFromDictionary
-//            }
-//            if let secondImageFromDictionary = images[1] {
-//                firstImage.image = secondImageFromDictionary
-//            }
-//            if let thirdImageFromDictionary = images[2] {
-//                firstImage.image = thirdImageFromDictionary
-//            }
+            if let firstImageFromDictionary = images[0] {
+                firstImage.image = firstImageFromDictionary
+            }
+            if let secondImageFromDictionary = images[1] {
+                firstImage.image = secondImageFromDictionary
+            }
+            if let thirdImageFromDictionary = images[2] {
+                firstImage.image = thirdImageFromDictionary
+            }
+            if let info = cycle.information as String? {
+                information.stringValue = info
+            }
+            if let price = cycle.pricePerHouar?.stringValue {
+                pricePerHour.stringValue = price
+            }
+            if let cycleName = cycle.name as String? {
+                name.stringValue = cycleName
+            }
+        }
+        if let unwrappedWindow = window {
+            PBAddCyclesHelper.shared.openFromHelperWindow(sheetWindow: unwrappedWindow)
         }
     }
     
@@ -52,13 +61,67 @@ class PBAddCycles: NSWindowController {
 
     @IBAction func saveAllPressed(_ sender: NSButton) {
         
+        if let cycle = PBAddCyclesHelper.shared.cycle {
+            if let cycleId = cycle.objectId as? String, let storeId = PBAddCyclesHelper.shared.storeId {
+                let directoryPath = "images/store_".appending(storeId).appendingFormat("/cycle_%@", cycleId)
+                PBImagesHelper.removeImages(directoryPath)
+                
+                let cycleName = name.stringValue.trimmingCharacters(in: [" "])
+                let info = information.stringValue.trimmingCharacters(in: [" "])
+                if cycleName == "" || info == "" {
+                    return
+                }
+                guard let price = Double(pricePerHour.stringValue) else {
+                    return
+                }
+                cycle.name = cycleName as NSString
+                cycle.information = info as NSString
+                cycle.pricePerHouar = NSNumber(value: price)
+                cycle.firstImage = nil; cycle.secondImage = nil; cycle.thirdImage = nil
+                
+                var fault : Fault? = nil
+                if let tiffData = firstImage.image?.tiffRepresentation {
+                    if let pngData = NSBitmapImageRep(data: tiffData)?.representation(using: .PNG, properties: [:]) {
+                        let pathToImage = directoryPath.appending("/firstImage.png")
+                        _ = PBBackendlessAPI.shared.backendless?.fileService.upload(pathToImage, content: pngData, error: &fault)
+                        cycle.firstImage = pathToImage as NSString
+                        
+                    }
+                }
+                if let tiffData = secondImage.image?.tiffRepresentation {
+                    if let pngData = NSBitmapImageRep(data: tiffData)?.representation(using: .PNG, properties: [:]) {
+                        let pathToImage = directoryPath.appending("/secondImage.png")
+                        _ = PBBackendlessAPI.shared.backendless?.fileService.upload(pathToImage, content: pngData, error: &fault)
+                        cycle.secondImage = pathToImage as NSString
+                    }
+                }
+                if let tiffData = thirdImage.image?.tiffRepresentation {
+                    if let pngData = NSBitmapImageRep(data: tiffData)?.representation(using: .PNG, properties: [:]) {
+                        let pathToImage = directoryPath.appending("/thirdImage.png")
+                        _ = PBBackendlessAPI.shared.backendless?.fileService.upload(pathToImage, content: pngData, error: &fault)
+                        cycle.thirdImage = pathToImage as NSString
+                    }
+                }
+                _ = PBBackendlessAPI.shared.backendless?.persistenceService.update(cycle, error: &fault)
+            }
+        }
+        else {
+            addNewCycle()
+        }
+        
+        PBAddCyclesHelper.shared.table?.reloadData()
+        
+        self.window?.isReleasedWhenClosed = true
+        self.window?.close()
+        self.window = nil
+    }
+    
+    private func addNewCycle() {
+        
         //directory of images = store_objectId/cycle_objectId/
         let cycleName = name.stringValue.trimmingCharacters(in: [" "])
-        if cycleName == "" {
-            return
-        }
         let info = information.stringValue.trimmingCharacters(in: [" "])
-        if info == "" {
+        if cycleName == "" || info == "" {
             return
         }
         guard let price = Double(pricePerHour.stringValue) else {

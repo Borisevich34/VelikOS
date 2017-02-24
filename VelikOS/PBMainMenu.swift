@@ -189,6 +189,9 @@ class PBMainMenu: NSWindowController {
     
     //Cycles
     @IBAction func cAdd(_ sender: NSButton) {
+        PBAddCyclesHelper.shared.cycle = nil
+        PBAddCyclesHelper.shared.table = tableOfCycles
+        //MARK - should be guard!
         if let unwrappedWindow = window {
             PBAddCyclesHelper.shared.window = unwrappedWindow
         }
@@ -197,9 +200,8 @@ class PBMainMenu: NSWindowController {
     }
     
     @IBAction func saveChanges(_ sender: NSButton) {
-        
         guard let user = PBBackendlessAPI.shared.currentUser(),
-            let store = PBBackendlessAPI.shared.loadCurrentStore(user, relations: ["geopoint"])
+            let store = PBBackendlessAPI.shared.loadCurrentStore(user, relations:  ["store", "store.geopoint"])
             else { return }
         
         let cycles = PBCyclesResponder.shared.cycles
@@ -219,17 +221,15 @@ class PBMainMenu: NSWindowController {
     @IBAction func removeCycle(_ sender: NSButton) {
         let selectedRow = tableOfCycles.selectedRow
         if selectedRow != -1 {
-            
             guard let user = PBBackendlessAPI.shared.currentUser(),
-                let store = PBBackendlessAPI.shared.loadCurrentStore(user, relations: ["geopoint"])
+                let store = PBBackendlessAPI.shared.loadCurrentStore(user, relations:  ["store", "store.geopoint"])
                 else { return }
             
             let cycles = PBCyclesResponder.shared.cycles
             let cycle = cycles.object(at: selectedRow) as! Cycle
-            
             //MARK - needs alert before return in guard
             guard let cycleId = cycle.objectId, let storeId = store.objectId else { return }
-            let path = "images/".appending(storeId as String).appendingFormat("/%@", cycleId as String)
+            let path = "images/store_".appending(storeId as String).appendingFormat("/cycle_%@", cycleId as String)
             PBImagesHelper.removeImages(path)
             cycles.removeObject(at: selectedRow)
             store.cycles = cycles
@@ -241,6 +241,13 @@ class PBMainMenu: NSWindowController {
         }
     }
     @IBAction func editCycleFromRow(_ sender: NSButton) {
+        //MARK - needs alert before return in guard
+        guard let user = PBBackendlessAPI.shared.currentUser(),
+            let store = PBBackendlessAPI.shared.loadCurrentStore(user, relations:  ["store", "store.geopoint"]),
+            let storeId = store.objectId as? String
+            else { return }
+        PBAddCyclesHelper.shared.storeId = storeId
+        PBAddCyclesHelper.shared.table = tableOfCycles
         let selectedRow = tableOfCycles.selectedRow
         if selectedRow != -1 {
             let cycles = PBCyclesResponder.shared.cycles
