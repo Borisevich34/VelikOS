@@ -17,7 +17,7 @@ class PBCyclesResponder : NSObject, IResponder {
     override init() {
         super.init()
     }
-
+    
     func responseHandler(_ response: Any!) -> Any! {
         delegate?.tableOfCycles.reloadData()
         return nil
@@ -26,7 +26,7 @@ class PBCyclesResponder : NSObject, IResponder {
     func errorHandler(_ fault: Fault!) {
         print(fault.message ?? "Fault")
     }
-
+    
     func cancelSubscribe() {
         subscription?.cancel()
     }

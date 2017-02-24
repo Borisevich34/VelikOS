@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cocoa
 
 enum CycleState: Int {
     case unavailible
@@ -50,4 +51,5 @@ class Cycle: NSObject {
         
         super.init()
     }
+    
 }

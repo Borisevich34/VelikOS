@@ -22,11 +22,12 @@ class PBCellSaved: NSTableCellView {
         set {
             if newValue {
                 label?.stringValue = "Yes"
-                label?.backgroundColor = colors.green
+                label?.textColor = colors.green
             }
             else {
                 label?.stringValue = "No"
-                label?.backgroundColor = colors.red
+                label?.textColor = colors.red
+                
             }
         }
     }

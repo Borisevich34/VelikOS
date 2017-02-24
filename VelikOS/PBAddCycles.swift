@@ -23,9 +23,21 @@ class PBAddCycles: NSWindowController {
         super.windowDidLoad()
         
         if let unwrappedWindow = window {
-            PBWindowHelper.shared.openFromHelpWindow(sheetWindow: unwrappedWindow)
+            PBAddCyclesHelper.shared.openFromHelperWindow(sheetWindow: unwrappedWindow)
         }
-        
+        if let cycle = PBAddCyclesHelper.shared.cycle {
+            let images : [Int : NSImage?] = PBImagesHelper.downloadImages(cycle)
+            print("Ok")
+//            if let firstImageFromDictionary = images[0] {
+//                //firstImage.image = firstImageFromDictionary
+//            }
+//            if let secondImageFromDictionary = images[1] {
+//                firstImage.image = secondImageFromDictionary
+//            }
+//            if let thirdImageFromDictionary = images[2] {
+//                firstImage.image = thirdImageFromDictionary
+//            }
+        }
     }
     
     override func awakeFromNib() {

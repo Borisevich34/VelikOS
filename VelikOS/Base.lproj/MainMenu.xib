@@ -127,9 +127,9 @@
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
                                                                             <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xlO-dS-dZA">
-                                                                                <rect key="frame" x="3" y="-1" width="99" height="23"/>
+                                                                                <rect key="frame" x="3" y="2" width="99" height="25"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" placeholderString="In use" drawsBackground="YES" completes="NO" numberOfVisibleItems="3" id="9qg-GU-0f5">
+                                                                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="border" placeholderString="In use" drawsBackground="YES" completes="NO" numberOfVisibleItems="3" id="9qg-GU-0f5">
                                                                                     <font key="font" metaFont="system"/>
                                                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -140,6 +140,9 @@
                                                                                         <string>In use</string>
                                                                                     </objectValues>
                                                                                 </comboBoxCell>
+                                                                                <connections>
+                                                                                    <outlet property="delegate" destination="uz1-HO-jaj" id="ZNF-y5-72D"/>
+                                                                                </connections>
                                                                             </comboBox>
                                                                         </subviews>
                                                                         <connections>
@@ -319,6 +322,9 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="editCycleFromRow:" target="HP0-f2-EEn" id="VbG-f9-ghG"/>
+                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="reS-ZF-KP5">
                                             <rect key="frame" x="254" y="21" width="81" height="32"/>
@@ -327,6 +333,9 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="removeCycle:" target="HP0-f2-EEn" id="LqR-cc-YMM"/>
+                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hF8-Q0-3rf">
                                             <rect key="frame" x="173" y="21" width="81" height="32"/>
@@ -335,6 +344,9 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="saveChanges:" target="HP0-f2-EEn" id="Qyx-iW-aq7"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </view>

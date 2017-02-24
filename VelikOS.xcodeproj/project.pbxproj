@@ -16,7 +16,7 @@
 		E936AB251E52F69200410F56 /* UserIdentifier.xib in Resources */ = {isa = PBXBuildFile; fileRef = E936AB241E52F69200410F56 /* UserIdentifier.xib */; };
 		E936AB281E52FC2300410F56 /* PBUserIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB271E52FC2300410F56 /* PBUserIdentifier.swift */; };
 		E936AB301E53011300410F56 /* PBMainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB2F1E53011300410F56 /* PBMainMenu.swift */; };
-		E936AB331E53370500410F56 /* PBWindowHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB321E53370500410F56 /* PBWindowHelper.swift */; };
+		E936AB331E53370500410F56 /* PBAddCyclesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB321E53370500410F56 /* PBAddCyclesHelper.swift */; };
 		E936AB391E533E3800410F56 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E936AB381E533E3800410F56 /* Podfile */; };
 		E936AB3B1E5345F300410F56 /* PBBackendlessAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936AB3A1E5345F300410F56 /* PBBackendlessAPI.swift */; };
 		E971660C1E5C8011009F5B8A /* PBCellState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971660B1E5C8011009F5B8A /* PBCellState.swift */; };
@@ -28,6 +28,7 @@
 		E98DB2481E55AA28007FE266 /* Strore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98DB2471E55AA28007FE266 /* Strore.swift */; };
 		E98DB24A1E55AC42007FE266 /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98DB2491E55AC42007FE266 /* Cycle.swift */; };
 		E98DB24C1E55B513007FE266 /* PBCheckGeolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98DB24B1E55B513007FE266 /* PBCheckGeolocation.swift */; };
+		E99EC0BE1E602E8C007F33E5 /* PBImagesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99EC0BD1E602E8C007F33E5 /* PBImagesHelper.swift */; };
 		E9B315881E5B30B200FEE9FB /* AddCycles.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9B315871E5B30B200FEE9FB /* AddCycles.xib */; };
 		E9B3158A1E5B3DA100FEE9FB /* PBAddCycles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B315891E5B3DA100FEE9FB /* PBAddCycles.swift */; };
 		E9BDA4F81E5DDC7D00F30573 /* PBCyclesResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDA4F71E5DDC7D00F30573 /* PBCyclesResponder.swift */; };
@@ -47,7 +48,7 @@
 		E936AB241E52F69200410F56 /* UserIdentifier.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserIdentifier.xib; sourceTree = "<group>"; };
 		E936AB271E52FC2300410F56 /* PBUserIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBUserIdentifier.swift; sourceTree = "<group>"; };
 		E936AB2F1E53011300410F56 /* PBMainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBMainMenu.swift; sourceTree = "<group>"; };
-		E936AB321E53370500410F56 /* PBWindowHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBWindowHelper.swift; sourceTree = "<group>"; };
+		E936AB321E53370500410F56 /* PBAddCyclesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBAddCyclesHelper.swift; sourceTree = "<group>"; };
 		E936AB381E533E3800410F56 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		E936AB3A1E5345F300410F56 /* PBBackendlessAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBBackendlessAPI.swift; sourceTree = "<group>"; };
 		E971660B1E5C8011009F5B8A /* PBCellState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBCellState.swift; sourceTree = "<group>"; };
@@ -59,6 +60,7 @@
 		E98DB2471E55AA28007FE266 /* Strore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strore.swift; sourceTree = "<group>"; };
 		E98DB2491E55AC42007FE266 /* Cycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cycle.swift; sourceTree = "<group>"; };
 		E98DB24B1E55B513007FE266 /* PBCheckGeolocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBCheckGeolocation.swift; sourceTree = "<group>"; };
+		E99EC0BD1E602E8C007F33E5 /* PBImagesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBImagesHelper.swift; sourceTree = "<group>"; };
 		E9B315871E5B30B200FEE9FB /* AddCycles.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCycles.xib; sourceTree = "<group>"; };
 		E9B315891E5B3DA100FEE9FB /* PBAddCycles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBAddCycles.swift; sourceTree = "<group>"; };
 		E9BDA4F71E5DDC7D00F30573 /* PBCyclesResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBCyclesResponder.swift; sourceTree = "<group>"; };
@@ -128,11 +130,12 @@
 		E936AB311E5336EA00410F56 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				E936AB321E53370500410F56 /* PBWindowHelper.swift */,
+				E936AB321E53370500410F56 /* PBAddCyclesHelper.swift */,
 				E936AB221E52F51100410F56 /* PBCoreData.swift */,
 				E936AB3A1E5345F300410F56 /* PBBackendlessAPI.swift */,
 				E98DB24B1E55B513007FE266 /* PBCheckGeolocation.swift */,
 				E9BDA4F71E5DDC7D00F30573 /* PBCyclesResponder.swift */,
+				E99EC0BD1E602E8C007F33E5 /* PBImagesHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -320,11 +323,12 @@
 				E936AB131E52F42E00410F56 /* AppDelegate.swift in Sources */,
 				E9B3158A1E5B3DA100FEE9FB /* PBAddCycles.swift in Sources */,
 				E936AB281E52FC2300410F56 /* PBUserIdentifier.swift in Sources */,
+				E99EC0BE1E602E8C007F33E5 /* PBImagesHelper.swift in Sources */,
 				E936AB231E52F51100410F56 /* PBCoreData.swift in Sources */,
 				E97166101E5C80B1009F5B8A /* PBCellPeriod.swift in Sources */,
 				E936AB301E53011300410F56 /* PBMainMenu.swift in Sources */,
 				E9BDA4F81E5DDC7D00F30573 /* PBCyclesResponder.swift in Sources */,
-				E936AB331E53370500410F56 /* PBWindowHelper.swift in Sources */,
+				E936AB331E53370500410F56 /* PBAddCyclesHelper.swift in Sources */,
 				E98DB24A1E55AC42007FE266 /* Cycle.swift in Sources */,
 				E98DB24C1E55B513007FE266 /* PBCheckGeolocation.swift in Sources */,
 				E936AB3B1E5345F300410F56 /* PBBackendlessAPI.swift in Sources */,

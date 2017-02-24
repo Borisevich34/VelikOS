@@ -36,6 +36,7 @@ class PBMainMenu: NSWindowController {
     func loadCustomElements() {
         
         if let user = PBBackendlessAPI.shared.currentUser() {
+            
             userName.stringValue = user.name as String
             wrappedStore = PBBackendlessAPI.shared.loadCurrentStore(user, relations: ["store", "store.geopoint", "store.cycles"])
             if let storeGeopoint = wrappedStore?.geopoint {
@@ -189,10 +190,68 @@ class PBMainMenu: NSWindowController {
     //Cycles
     @IBAction func cAdd(_ sender: NSButton) {
         if let unwrappedWindow = window {
-            PBWindowHelper.shared.window = unwrappedWindow
+            PBAddCyclesHelper.shared.window = unwrappedWindow
         }
         let controller = PBAddCycles(windowNibName: "AddCycles")
         controller.loadWindow()
+    }
+    
+    @IBAction func saveChanges(_ sender: NSButton) {
+        
+        guard let user = PBBackendlessAPI.shared.currentUser(),
+            let store = PBBackendlessAPI.shared.loadCurrentStore(user, relations: ["geopoint"])
+            else { return }
+        
+        let cycles = PBCyclesResponder.shared.cycles
+        tableOfCycles.enumerateAvailableRowViews { (view, row) in
+            if let cellState = view.view(atColumn: 1) as? PBCellState, let selectedIndex = cellState.comboBox?.indexOfSelectedItem {
+                let cycle = cycles.object(at: row) as! Cycle
+                cycle.state = NSNumber(value: selectedIndex)
+            }
+        }
+        store.cycles = cycles
+        var fault : Fault? = nil
+        _ = PBBackendlessAPI.shared.backendless?.persistenceService.update(store, error: &fault)
+        print(fault?.message ?? "No fault")
+        tableOfCycles.reloadData()
+    }
+    
+    @IBAction func removeCycle(_ sender: NSButton) {
+        let selectedRow = tableOfCycles.selectedRow
+        if selectedRow != -1 {
+            
+            guard let user = PBBackendlessAPI.shared.currentUser(),
+                let store = PBBackendlessAPI.shared.loadCurrentStore(user, relations: ["geopoint"])
+                else { return }
+            
+            let cycles = PBCyclesResponder.shared.cycles
+            let cycle = cycles.object(at: selectedRow) as! Cycle
+            
+            //MARK - needs alert before return in guard
+            guard let cycleId = cycle.objectId, let storeId = store.objectId else { return }
+            let path = "images/".appending(storeId as String).appendingFormat("/%@", cycleId as String)
+            PBImagesHelper.removeImages(path)
+            cycles.removeObject(at: selectedRow)
+            store.cycles = cycles
+            var fault : Fault? = nil
+            _ = PBBackendlessAPI.shared.backendless?.persistenceService.remove(cycle, error: &fault)
+            _ = PBBackendlessAPI.shared.backendless?.persistenceService.update(store, error: &fault)
+            print(fault?.message ?? "No fault")
+            tableOfCycles.reloadData()
+        }
+    }
+    @IBAction func editCycleFromRow(_ sender: NSButton) {
+        let selectedRow = tableOfCycles.selectedRow
+        if selectedRow != -1 {
+            let cycles = PBCyclesResponder.shared.cycles
+            let cycle = cycles.object(at: selectedRow) as! Cycle
+            if let unwrappedWindow = window {
+                PBAddCyclesHelper.shared.cycle = cycle
+                PBAddCyclesHelper.shared.window = unwrappedWindow
+            }
+            let controller = PBAddCycles(windowNibName: "AddCycles")
+            controller.loadWindow()
+        }
     }
     
 }
@@ -229,7 +288,10 @@ extension PBMainMenu : NSTableViewDelegate, NSTableViewDataSource {
             break
         case "AutomaticTableColumnIdentifier.1":
             let cellView = tableView.make(withIdentifier: "State", owner: self) as? PBCellState
+            cellView?.savedState = state
+            cellView?.table = tableOfCycles
             cellView?.comboBox?.selectItem(at: state)
+            cellView?.rowInTable = row
             columnView = cellView
             break
         case "AutomaticTableColumnIdentifier.2":
