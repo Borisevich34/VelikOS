@@ -1,6 +1,0 @@
-framework module Pods_VelikOS {
-  umbrella header "Pods-VelikOS-umbrella.h"
-
-  export *
-  module * { export * }
-}

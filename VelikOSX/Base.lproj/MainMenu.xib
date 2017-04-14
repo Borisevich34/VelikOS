@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
-        <plugIn identifier="com.apple.MapKitIBPlugin" version="11542"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <plugIn identifier="com.apple.MapKitIBPlugin" version="12118"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -58,14 +58,10 @@
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
                             <tabViewItem label="Store" identifier="" id="JXB-8n-M9T">
-                                <view key="view" id="MiT-4b-ijc">
+                                <view key="view" ambiguous="YES" id="MiT-4b-ijc">
                                     <rect key="frame" x="10" y="7" width="617" height="401"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="QGD-9O-wIG">
-                                            <rect key="frame" x="306" y="13" width="5" height="363"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        </box>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tp6-Wn-Gpn">
                                             <rect key="frame" x="82" y="367" width="141" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -105,7 +101,7 @@
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bU-cw-zIK">
                                             <rect key="frame" x="330" y="241" width="270" height="118"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" drawsBackground="YES" id="KCF-uP-a22">
+                                            <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" drawsBackground="YES" id="KCF-uP-a22">
                                                 <font key="font" metaFont="system"/>
                                                 <string key="placeholderString">Name of your store,
 Current address of your store,
@@ -219,7 +215,7 @@ Contucts: cellphone, email or other.</string>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iar-Mh-CD0">
                                             <rect key="frame" x="510" y="163" width="24" height="37"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="check" title="Sa" bezelStyle="regularSquare" imagePosition="above" alignment="center" inset="2" id="aOE-QO-03M">
+                                            <buttonCell key="cell" type="check" title="Sa" bezelStyle="regularSquare" imagePosition="above" alignment="center" state="on" inset="2" id="aOE-QO-03M">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -227,7 +223,7 @@ Contucts: cellphone, email or other.</string>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G7A-Eq-LL8">
                                             <rect key="frame" x="538" y="163" width="24" height="37"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="check" title="Su" bezelStyle="regularSquare" imagePosition="above" alignment="center" inset="2" id="ENi-ez-XjT">
+                                            <buttonCell key="cell" type="check" title="Su" bezelStyle="regularSquare" imagePosition="above" alignment="center" state="on" inset="2" id="ENi-ez-XjT">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -235,7 +231,7 @@ Contucts: cellphone, email or other.</string>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aSX-Yp-6GR">
                                             <rect key="frame" x="328" y="66" width="274" height="80"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Working houars" drawsBackground="YES" id="zCA-wc-6L5">
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Working hours" drawsBackground="YES" id="zCA-wc-6L5">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -319,11 +315,15 @@ Contucts: cellphone, email or other.</string>
                                                 </objectValues>
                                             </comboBoxCell>
                                         </comboBox>
+                                        <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="QGD-9O-wIG">
+                                            <rect key="frame" x="229" y="12" width="165" height="363"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </box>
                                     </subviews>
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="Cycles" identifier="1" id="f4e-tC-ilc">
-                                <view key="view" ambiguous="YES" id="gCP-wS-UwP">
+                                <view key="view" id="gCP-wS-UwP">
                                     <rect key="frame" x="10" y="7" width="617" height="401"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -394,13 +394,13 @@ Contucts: cellphone, email or other.</string>
                                                                             <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xlO-dS-dZA">
                                                                                 <rect key="frame" x="3" y="0.0" width="99" height="25"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="border" placeholderString="In use" drawsBackground="YES" completes="NO" numberOfVisibleItems="3" id="9qg-GU-0f5">
+                                                                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="border" placeholderString="In use" drawsBackground="YES" completes="NO" numberOfVisibleItems="4" id="9qg-GU-0f5">
                                                                                     <font key="font" metaFont="system"/>
                                                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                     <objectValues>
                                                                                         <string>Unavailible</string>
-                                                                                        <string>Free</string>
+                                                                                        <string>Availible</string>
                                                                                         <string>Waiting</string>
                                                                                         <string>In use</string>
                                                                                     </objectValues>
@@ -430,7 +430,7 @@ Contucts: cellphone, email or other.</string>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                 <prototypeCellViews>
                                                                     <tableCellView identifier="Period" id="GVy-nh-Nxv" customClass="PBCellPeriod" customModule="VelikOS" customModuleProvider="target">
-                                                                        <rect key="frame" x="232" y="1" width="97" height="26"/>
+                                                                        <rect key="frame" x="232" y="1" width="96" height="26"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
                                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1T2-ri-LD9">
@@ -463,11 +463,11 @@ Contucts: cellphone, email or other.</string>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                 <prototypeCellViews>
                                                                     <tableCellView identifier="Order" id="Iyz-zg-rsY" customClass="PBCellOrder" customModule="VelikOS" customModuleProvider="target">
-                                                                        <rect key="frame" x="331.5" y="1" width="65" height="26"/>
+                                                                        <rect key="frame" x="331.5" y="1" width="64" height="26"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
                                                                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lye-QR-kSL">
-                                                                                <rect key="frame" x="5" y="6" width="58.5" height="17"/>
+                                                                                <rect key="frame" x="5" y="6" width="57.5" height="17"/>
                                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" placeholderString="08:10" id="GGg-Fy-hug">
                                                                                     <font key="font" metaFont="system"/>
@@ -557,7 +557,7 @@ Contucts: cellphone, email or other.</string>
                                                 </subviews>
                                             </clipView>
                                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="vIF-RX-bSf">
-                                                <rect key="frame" x="1" y="-15" width="0.0" height="15"/>
+                                                <rect key="frame" x="1" y="-16" width="0.0" height="16"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="bXh-hk-u0w">
@@ -625,15 +625,15 @@ Contucts: cellphone, email or other.</string>
                                             <rect key="frame" x="23" y="19" width="570" height="330"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <clipView key="contentView" ambiguous="YES" id="JdM-Xh-hgU">
-                                                <rect key="frame" x="1" y="1" width="553" height="328"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <rect key="frame" x="1" y="1" width="568" height="328"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <textView ambiguous="YES" editable="NO" selectable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Nl7-Ay-DaT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="553" height="328"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="568" height="328"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="553" height="328"/>
-                                                        <size key="maxSize" width="566" height="10000000"/>
+                                                        <size key="minSize" width="568" height="328"/>
+                                                        <size key="maxSize" width="570" height="10000000"/>
                                                         <attributedString key="textStorage">
                                                             <fragment content="Velik application based on Backendles BaaS service. ">
                                                                 <attributes>
@@ -751,7 +751,7 @@ Cg
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="sog-pu-HhH">
-                                                <rect key="frame" x="554" y="1" width="15" height="328"/>
+                                                <rect key="frame" x="-15" y="1" width="16" height="0.0"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                         </scrollView>

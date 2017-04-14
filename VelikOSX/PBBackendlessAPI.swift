@@ -22,9 +22,6 @@ class PBBackendlessAPI {
     
     init() {
         backendless?.initApp(APP_ID, secret: SECRET_KEY, version: VERSION_NUM)
-        
-        // If you plan to use Backendless Media Service, uncomment the following line (iOS ONLY!)
-        // backendless.mediaService = MediaService()
     }
     
     func syncRegisterUserWithProperties(_ properties: [String : Any], latitude: Double, longitude: Double) -> Fault? {
@@ -38,7 +35,7 @@ class PBBackendlessAPI {
             var testFault : Fault? = nil
             store.geopoint = GeoPoint(point: GEO_POINT(latitude: latitude, longitude: longitude), categories: ["Default"], metadata: ["store": store])
             if (PBBackendlessAPI.shared.backendless?.persistenceService.update(store, error: &testFault)) == nil {
-                print(testFault?.message ?? "Fault")
+                print(testFault?.message ?? "Success load relation-store from user")
             }
         }
         //---
@@ -52,28 +49,28 @@ class PBBackendlessAPI {
         return userWithLoadedStore?.getProperty("store") as? Store
     }
 
-    //Нужно не сразу логинить а потом проверять платформу, а сначала проверить пользователя
-    func syncLoginUser(email: String, password: String, isNeedToRemember: Bool) -> Fault? {
+    func syncLoginUser(email: String, password: String, isNeedToRemember: Bool) -> String? {
         var fault : Fault? = nil
-        guard let user = backendless?.userService.login(email, password: password, error: &fault) else {
-            return fault
+        let whereClause = "email = '\(email)'"
+        let userQuery = BackendlessDataQuery()
+        userQuery.whereClause = whereClause
+        
+        guard let userFromTable = backendless?.persistenceService.of(BackendlessUser.classForCoder()).find(userQuery, fault: &fault).data.first as? BackendlessUser else {
+            return fault?.message ?? "Invalid login or password"
         }
-        guard let platform = user.getProperty("platform") as? String else {
-            //MARK - need to logout
-            var logoutFault : Fault? = nil
-            _ = backendless?.userService.logoutError(&logoutFault)
-            return Fault(message: "!!!!Paste later!!!!")   //MARK - to do
+        guard let platform = userFromTable.getProperty("platform") as? String else {
+            return "Invalid login or password"
         }
-        if platform != "osx" {
-            //MARK - need to logout
-            var logoutFault : Fault? = nil
-            _ = backendless?.userService.logoutError(&logoutFault)
-            fault = Fault(message: "!!!!Paste later!!!!")   //MARK - to do
-        }
-        else {
+        if platform == "osx" {
+            guard (backendless?.userService.login(email, password: password, error: &fault)) != nil else {
+                return fault?.message ?? "Invalid login or password"
+            }
             backendless?.userService.setStayLoggedIn(isNeedToRemember)
         }
-        return fault
+        else {
+            return "Invalid login or password"
+        }
+        return nil
     }
     
     func setNeedToStayLogged(needToStayLogged: Bool) {
@@ -87,7 +84,7 @@ class PBBackendlessAPI {
     func userLogout() {
         var logoutFault : Fault? = nil
         _ = backendless?.userService.logoutError(&logoutFault)
-        print("breakpoint")
+        print("User log out")
     }
     
     func currentUser() -> BackendlessUser? {

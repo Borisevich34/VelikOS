@@ -11,10 +11,4 @@ import Cocoa
 class PBCellName: NSTableCellView {
 
     @IBOutlet weak var label: NSTextField?
-//    override func draw(_ dirtyRect: NSRect) {
-//        super.draw(dirtyRect)
-//
-//        // Drawing code here.
-//    }
-    
 }

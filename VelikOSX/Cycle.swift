@@ -26,7 +26,7 @@ class Cycle: NSObject {
     
     var name : NSString?
     var information : NSString?
-    var pricePerHouar : NSNumber?
+    var pricePerHour : NSNumber?
     var user : BackendlessUser?
     
     var firstImage : NSString?
@@ -43,7 +43,7 @@ class Cycle: NSObject {
         
         name = cycleName as NSString
         information = info as NSString
-        pricePerHouar = NSNumber(value: price)
+        pricePerHour = NSNumber(value: price)
         
         firstImage = firstUrl as NSString?
         secondImage = secondUrl as NSString?

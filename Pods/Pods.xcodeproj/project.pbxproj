@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2454C2E1F3F3A4806698665327FB7984 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */; };
-		CEA02380556EEED2DAEC566474FAAE49 /* Pods-VelikOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EBFB1BE0CD1C7AB56A103EA6C95433FE /* Pods-VelikOS-dummy.m */; };
-		DEA4E7208DBC69FCA6A7DC60A9403E5E /* Pods-VelikOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F27A1E524ABECC3EFB00BBBCEAA83FCB /* Pods-VelikOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A29949DB4055653C2BB7CE610BB3E4F2 /* Pods-VelikOSX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D02AF5A1143D97D520F60BD3AC27E3 /* Pods-VelikOSX-dummy.m */; };
+		AAC29D6105993838080BB19957DA27C5 /* Pods-VelikOSX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9E00BA3C5B1D68FFE17749FB5075102 /* Pods-VelikOSX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE75BBD98840755E5F6DCE726D38942E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,20 +30,21 @@
 		12A70279DBE71DCACAE7D4E50C681529 /* BodyHolderWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BodyHolderWriter.h; path = SDK/osx/CommLib/include/BodyHolderWriter.h; sourceTree = "<group>"; };
 		12D8696DD8215399424C62FF7E992EDC /* DeliveryOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DeliveryOptions.h; path = SDK/osx/backendless/include/DeliveryOptions.h; sourceTree = "<group>"; };
 		132022CF0C924FE574986F17644AE6BA /* FileService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FileService.h; path = SDK/osx/backendless/include/FileService.h; sourceTree = "<group>"; };
+		13B5C9E063B43AACF26B13877A3B094B /* Pods-VelikOSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VelikOSX.release.xcconfig"; sourceTree = "<group>"; };
 		142F4D90F55F3498DE62F49DEC11188C /* UserService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UserService.h; path = SDK/osx/backendless/include/UserService.h; sourceTree = "<group>"; };
 		172F1BAD35BBFFE4A61E0793A5FEC345 /* ErrMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ErrMessage.h; path = SDK/osx/CommLib/include/ErrMessage.h; sourceTree = "<group>"; };
 		1753A066DEF325DB634E84E591CFFD1A /* AnonymousObjectReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AnonymousObjectReader.h; path = SDK/osx/CommLib/include/AnonymousObjectReader.h; sourceTree = "<group>"; };
 		192B8428AC772D9CB1F62B8C9167069B /* GeoFenceMonitoring.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GeoFenceMonitoring.h; path = SDK/osx/backendless/include/GeoFenceMonitoring.h; sourceTree = "<group>"; };
+		19C16D64741E54D3ECA9E2770AF73984 /* Pods-VelikOSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VelikOSX.debug.xcconfig"; sourceTree = "<group>"; };
 		19E0B4DF484464FD0B83F4C8767026CC /* BEFileInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BEFileInfo.h; path = SDK/osx/backendless/include/BEFileInfo.h; sourceTree = "<group>"; };
 		1AD9BCE3C5D5130DCE634AC2BACBE01E /* UndefinedTypeReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UndefinedTypeReader.h; path = SDK/osx/CommLib/include/UndefinedTypeReader.h; sourceTree = "<group>"; };
 		1B6C4307D38A2DEDCB07D58A8D466D01 /* BackendlessFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BackendlessFile.h; path = SDK/osx/backendless/include/BackendlessFile.h; sourceTree = "<group>"; };
-		1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		1DDDC265397ACBFE87508E9CC2ED0469 /* GeoMath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GeoMath.h; path = SDK/osx/backendless/include/GeoMath.h; sourceTree = "<group>"; };
 		1EE027EA6888463546F1869C690544E7 /* IAttributeStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IAttributeStore.h; path = SDK/osx/CommLib/include/IAttributeStore.h; sourceTree = "<group>"; };
 		22352676AFFA2EA97CEAE36C8EE5B345 /* BackendlessGeoQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BackendlessGeoQuery.h; path = SDK/osx/backendless/include/BackendlessGeoQuery.h; sourceTree = "<group>"; };
 		26B9BF5F5AEF82986FEF43AA50B22DE7 /* Presence.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Presence.h; path = SDK/osx/backendless/include/Presence.h; sourceTree = "<group>"; };
+		270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		27782B1E9DEEE0037671E7AD3451E037 /* ISDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ISDatabase.h; path = SDK/osx/backendless/include/ISDatabase.h; sourceTree = "<group>"; };
-		277FAFC643033D70C20AEAD3169AB476 /* Pods-VelikOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VelikOS.debug.xcconfig"; sourceTree = "<group>"; };
 		27D9AEFB00A5A10C8051A1275282A6EC /* ObjectWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ObjectWriter.h; path = SDK/osx/CommLib/include/ObjectWriter.h; sourceTree = "<group>"; };
 		29BFA5FA34EA9A8C99DCE8B7E6FBC68D /* ServerCallback.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ServerCallback.h; path = SDK/osx/backendless/include/ServerCallback.h; sourceTree = "<group>"; };
 		2B546795A66D4696B8853886B0DD0ADC /* GeoCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GeoCategory.h; path = SDK/osx/backendless/include/GeoCategory.h; sourceTree = "<group>"; };
@@ -68,7 +69,6 @@
 		3F2FDCC4AD28AA047A441E966940BB73 /* AmfV3Formatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AmfV3Formatter.h; path = SDK/osx/CommLib/include/AmfV3Formatter.h; sourceTree = "<group>"; };
 		3F405C0AFA4F2DC657D10344EFBC6676 /* DateReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DateReader.h; path = SDK/osx/CommLib/include/DateReader.h; sourceTree = "<group>"; };
 		413E027A36DBE6E2D3AEC2E9A3E3C9CD /* IAtomicCounters.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IAtomicCounters.h; path = SDK/osx/backendless/include/IAtomicCounters.h; sourceTree = "<group>"; };
-		4153146879081BAF368F8B5039EBF319 /* Pods-VelikOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VelikOS-resources.sh"; sourceTree = "<group>"; };
 		44E60927338115621DF128B3343312BB /* MessageStatus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MessageStatus.h; path = SDK/osx/backendless/include/MessageStatus.h; sourceTree = "<group>"; };
 		4581F882EE5CC7DB17621383EAF515EC /* SharedObjectMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SharedObjectMessage.h; path = SDK/osx/CommLib/include/SharedObjectMessage.h; sourceTree = "<group>"; };
 		4B49D2AD3B08A1A1E17C09C604CEE0C1 /* NullReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NullReader.h; path = SDK/osx/CommLib/include/NullReader.h; sourceTree = "<group>"; };
@@ -89,9 +89,10 @@
 		570E2B775F82EAD6C8927CE37F5DE38A /* Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Header.h; path = SDK/osx/CommLib/include/Header.h; sourceTree = "<group>"; };
 		5761360FA92D94F06FD643AD6CB1C654 /* LocationTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LocationTracker.h; path = SDK/osx/backendless/include/LocationTracker.h; sourceTree = "<group>"; };
 		578F01EE2D761997E4F13256B3CE7C25 /* Backendless.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Backendless.h; path = SDK/osx/backendless/include/Backendless.h; sourceTree = "<group>"; };
-		57E09DF58F2F560BBFE78725435EB350 /* Pods-VelikOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VelikOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		589287A319710F81391541F99AB2EB89 /* MediaService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MediaService.h; path = SDK/osx/backendless/include/MediaService.h; sourceTree = "<group>"; };
 		594A23CE142C79DA81413F93809E784C /* ReqMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ReqMessage.h; path = SDK/osx/CommLib/include/ReqMessage.h; sourceTree = "<group>"; };
+		59D6093E670C8D3C96BA55D243BA19AD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59F13B2C44A7351C97F43DAA543B2BD2 /* Pods-VelikOSX-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VelikOSX-acknowledgements.plist"; sourceTree = "<group>"; };
 		5D1ECAD238AF181A115E065ED5DBB6FB /* ReaderUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ReaderUtils.h; path = SDK/osx/CommLib/include/ReaderUtils.h; sourceTree = "<group>"; };
 		5D86D335A59BD52E365C71BCF8EA189D /* MessagingService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MessagingService.h; path = SDK/osx/backendless/include/MessagingService.h; sourceTree = "<group>"; };
 		5ECC94734B51A1E66D16050135E67F06 /* WebORBSerializer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WebORBSerializer.h; path = SDK/osx/CommLib/include/WebORBSerializer.h; sourceTree = "<group>"; };
@@ -106,13 +107,13 @@
 		63DB5EF94C0CB9DAAB3AE0E1FB1864E3 /* NotAReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NotAReader.h; path = SDK/osx/CommLib/include/NotAReader.h; sourceTree = "<group>"; };
 		642127DFA7963C9C0BDEEBF2B78E31BD /* Datatypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Datatypes.h; path = SDK/osx/CommLib/include/Datatypes.h; sourceTree = "<group>"; };
 		64AA03EE7A0E1A8F4F1E5BBBAEF8C812 /* RTMPConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RTMPConstants.h; path = SDK/osx/CommLib/include/RTMPConstants.h; sourceTree = "<group>"; };
+		64D02AF5A1143D97D520F60BD3AC27E3 /* Pods-VelikOSX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VelikOSX-dummy.m"; sourceTree = "<group>"; };
 		64F46FFB07204DB373403E1A5854719F /* BodyHolder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BodyHolder.h; path = SDK/osx/CommLib/include/BodyHolder.h; sourceTree = "<group>"; };
 		6533DE3F27829BD103E40D948C47202E /* ParseContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ParseContext.h; path = SDK/osx/CommLib/include/ParseContext.h; sourceTree = "<group>"; };
 		65D7256BB01D24E70D93786761885692 /* MediaPlaybackOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MediaPlaybackOptions.h; path = SDK/osx/backendless/include/MediaPlaybackOptions.h; sourceTree = "<group>"; };
 		67922BB8DC5746630300A98CA1CD832C /* ObjectSerializer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ObjectSerializer.h; path = SDK/osx/CommLib/include/ObjectSerializer.h; sourceTree = "<group>"; };
 		67F5636F501D91751742326F0CD3CCE5 /* BESubscription.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BESubscription.h; path = SDK/osx/backendless/include/BESubscription.h; sourceTree = "<group>"; };
 		69DA51037CAB2F509338836A16D538FD /* BeaconsInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BeaconsInfo.h; path = SDK/osx/backendless/include/BeaconsInfo.h; sourceTree = "<group>"; };
-		6A1538C810EAA1EB0DF470FE18D4F9D4 /* Pods-VelikOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VelikOS-frameworks.sh"; sourceTree = "<group>"; };
 		6A7E65DC44E80432BA1842EF864AFA01 /* NullType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NullType.h; path = SDK/osx/CommLib/include/NullType.h; sourceTree = "<group>"; };
 		6C17F5E0E4410017BDF6D393F91A39C2 /* MHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MHeader.h; path = SDK/osx/CommLib/include/MHeader.h; sourceTree = "<group>"; };
 		6D48B07884B6AF4F421C68CC8FB5822B /* IClientSharedObjectDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IClientSharedObjectDelegate.h; path = SDK/osx/CommLib/include/IClientSharedObjectDelegate.h; sourceTree = "<group>"; };
@@ -139,6 +140,7 @@
 		857745FA1658174F99B04B8A37571E70 /* AtomicCountersFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AtomicCountersFactory.h; path = SDK/osx/backendless/include/AtomicCountersFactory.h; sourceTree = "<group>"; };
 		861D6A29876810395F6709F285722D70 /* IVideoStreamCodec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IVideoStreamCodec.h; path = SDK/osx/CommLib/include/IVideoStreamCodec.h; sourceTree = "<group>"; };
 		87E2CCB729D5DAC7EC3D34545DB3749D /* V3VectorReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = V3VectorReader.h; path = SDK/osx/CommLib/include/V3VectorReader.h; sourceTree = "<group>"; };
+		887454BF310515ED82E3F828E55A254E /* Pods-VelikOSX-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VelikOSX-frameworks.sh"; sourceTree = "<group>"; };
 		8890A7FA7734659D6A679A37F12B41C6 /* MediaPublishOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MediaPublishOptions.h; path = SDK/osx/backendless/include/MediaPublishOptions.h; sourceTree = "<group>"; };
 		8A7EBD91CCF9211E3EA04F9BBDB74B53 /* ITypeReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ITypeReader.h; path = SDK/osx/CommLib/include/ITypeReader.h; sourceTree = "<group>"; };
 		8A9425F9C33BA261B0E97D2072586AE6 /* ArrayReferenceWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ArrayReferenceWriter.h; path = SDK/osx/CommLib/include/ArrayReferenceWriter.h; sourceTree = "<group>"; };
@@ -151,12 +153,13 @@
 		8C75986EB90ABC25EC75C4CE6605C81A /* V3ArrayReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = V3ArrayReader.h; path = SDK/osx/CommLib/include/V3ArrayReader.h; sourceTree = "<group>"; };
 		8D2287C554FD8B293C4618D7EF77A4FF /* MediaPublisher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MediaPublisher.h; path = SDK/osx/backendless/include/MediaPublisher.h; sourceTree = "<group>"; };
 		8DB6E8BD5A9D64246FAC3A409F5DE2E4 /* Body.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Body.h; path = SDK/osx/CommLib/include/Body.h; sourceTree = "<group>"; };
+		8DE6B72412C650B05AF8C5EEE10B1449 /* Pods_VelikOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_VelikOSX.framework; path = "Pods-VelikOSX.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F619A0EACC8342572B19380587C13DF /* DateType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DateType.h; path = SDK/osx/CommLib/include/DateType.h; sourceTree = "<group>"; };
 		9201CCC616A94ABE7A30A2ACE82079C4 /* ConcreteObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ConcreteObject.h; path = SDK/osx/CommLib/include/ConcreteObject.h; sourceTree = "<group>"; };
 		934CD1D927B62AE026F49C8CD71457BD /* IArgumentObjectFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IArgumentObjectFactory.h; path = SDK/osx/CommLib/include/IArgumentObjectFactory.h; sourceTree = "<group>"; };
 		93666A9AFD9E160224F78BDD483E75C1 /* FlexMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexMessage.h; path = SDK/osx/CommLib/include/FlexMessage.h; sourceTree = "<group>"; };
 		9377A9384676AB123FEAFFBB7B9F4EB4 /* DeviceRegistration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DeviceRegistration.h; path = SDK/osx/backendless/include/DeviceRegistration.h; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		944144BA15E5D7CDD8AA5B06E5EA2120 /* AMFHeaderWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AMFHeaderWriter.h; path = SDK/osx/CommLib/include/AMFHeaderWriter.h; sourceTree = "<group>"; };
 		953B588DBE3615021862108242006AEB /* Call.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Call.h; path = SDK/osx/CommLib/include/Call.h; sourceTree = "<group>"; };
 		95BB2C7877D24CC1E8B53C91962226F6 /* ICacheableAdaptingType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ICacheableAdaptingType.h; path = SDK/osx/CommLib/include/ICacheableAdaptingType.h; sourceTree = "<group>"; };
@@ -175,7 +178,6 @@
 		A8DFF5936938C6E439E26F6F470A9DD4 /* AttributeStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AttributeStore.h; path = SDK/osx/CommLib/include/AttributeStore.h; sourceTree = "<group>"; };
 		A92988936F0A289E7B79BE4C21A2A6BA /* BoundPropertyBagReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BoundPropertyBagReader.h; path = SDK/osx/CommLib/include/BoundPropertyBagReader.h; sourceTree = "<group>"; };
 		A95458E165737F68384DF7C7D6417D4A /* ObjectProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ObjectProperty.h; path = SDK/osx/backendless/include/ObjectProperty.h; sourceTree = "<group>"; };
-		AA539FC4254491D44ED6E53E5BB32ABE /* Pods-VelikOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VelikOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		AB1FDE61EC1B8D3118658D9C32E75883 /* NullWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NullWriter.h; path = SDK/osx/CommLib/include/NullWriter.h; sourceTree = "<group>"; };
 		AE2BB810C2A748D1B63F394BBAF7C837 /* BaseRTMPProtocolEncoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BaseRTMPProtocolEncoder.h; path = SDK/osx/CommLib/include/BaseRTMPProtocolEncoder.h; sourceTree = "<group>"; };
 		AE4255D80E78C22DB3C8A971FF30F38D /* HashMap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HashMap.h; path = SDK/osx/backendless/include/HashMap.h; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 		AFFCE7D58A765CEA9AC8F28B9B380CD9 /* PropertyBagWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PropertyBagWriter.h; path = SDK/osx/CommLib/include/PropertyBagWriter.h; sourceTree = "<group>"; };
 		B0442332F08826F0B72E9A341A971211 /* RtmpEngine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RtmpEngine.h; path = SDK/osx/CommLib/include/RtmpEngine.h; sourceTree = "<group>"; };
 		B0B6690CB7C0B9F7EB72E2C2EFDAE324 /* DateWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DateWriter.h; path = SDK/osx/CommLib/include/DateWriter.h; sourceTree = "<group>"; };
+		B11EAC3B213D6E86762D3AC20B6B51CE /* Pods-VelikOSX-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VelikOSX-resources.sh"; sourceTree = "<group>"; };
 		B247A8D342D3190C40DE584521CC35EA /* BackendlessEntity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BackendlessEntity.h; path = SDK/osx/backendless/include/BackendlessEntity.h; sourceTree = "<group>"; };
 		B596E753BF05BAF2AFECCECBB376803C /* RequestParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RequestParser.h; path = SDK/osx/CommLib/include/RequestParser.h; sourceTree = "<group>"; };
 		B5EF55584638190F6ED02D0A58BBA7A6 /* V3ReferenceCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = V3ReferenceCache.h; path = SDK/osx/CommLib/include/V3ReferenceCache.h; sourceTree = "<group>"; };
@@ -207,9 +210,9 @@
 		C6562A45C9C2AEFE11D5092E330EEE49 /* BackendlessSimpleQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BackendlessSimpleQuery.h; path = SDK/osx/backendless/include/BackendlessSimpleQuery.h; sourceTree = "<group>"; };
 		C6AA33D7F636B030E3A6F1B534450E30 /* PendingCall.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PendingCall.h; path = SDK/osx/CommLib/include/PendingCall.h; sourceTree = "<group>"; };
 		C866148746269A670C0409E854A3B81A /* PublishOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PublishOptions.h; path = SDK/osx/backendless/include/PublishOptions.h; sourceTree = "<group>"; };
+		C9CA1ABEB659E1812B02131DA130A22F /* Pods-VelikOSX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-VelikOSX.modulemap"; sourceTree = "<group>"; };
 		CA4DB1306E91E3C66C49675B10AFA9A1 /* BackendlessCacheProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BackendlessCacheProtocol.h; path = SDK/osx/backendless/include/BackendlessCacheProtocol.h; sourceTree = "<group>"; };
 		CA6C45986DCE036F06C3926B935DBD68 /* MessageWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MessageWriter.h; path = SDK/osx/CommLib/include/MessageWriter.h; sourceTree = "<group>"; };
-		CADF50D26568146F369FD0A1C8299794 /* Pods-VelikOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VelikOS.modulemap"; sourceTree = "<group>"; };
 		CC8FB2DFA5DBAB30D88EC5F0B71AFD15 /* Types.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Types.h; path = SDK/osx/CommLib/include/Types.h; sourceTree = "<group>"; };
 		CF04BAB21074A50F485A3C86BBA3765B /* IProtocolFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IProtocolFormatter.h; path = SDK/osx/CommLib/include/IProtocolFormatter.h; sourceTree = "<group>"; };
 		CF3F0FC1806881FF7F7C793B84ECCAFC /* Engine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Engine.h; path = SDK/osx/CommLib/include/Engine.h; sourceTree = "<group>"; };
@@ -222,7 +225,6 @@
 		D7A8925D9024D10189551DCCB59FE603 /* BooleanReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BooleanReader.h; path = SDK/osx/CommLib/include/BooleanReader.h; sourceTree = "<group>"; };
 		D9D04BBBBE91501AF3E42994E8168081 /* WebORBDeserializer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WebORBDeserializer.h; path = SDK/osx/CommLib/include/WebORBDeserializer.h; sourceTree = "<group>"; };
 		DC445EEF85B36318A27F8EFB2A3CFF0A /* ORBConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORBConstants.h; path = SDK/osx/CommLib/include/ORBConstants.h; sourceTree = "<group>"; };
-		DCEAAD10F5CCE62B193DAF50F1984826 /* Pods_VelikOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VelikOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD983A13991CA15CEFB1730790648DF6 /* NamedObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NamedObject.h; path = SDK/osx/CommLib/include/NamedObject.h; sourceTree = "<group>"; };
 		DE80D44D6A43D75D920F3A0B4AD6A5DD /* ICastingAttributeStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ICastingAttributeStore.h; path = SDK/osx/CommLib/include/ICastingAttributeStore.h; sourceTree = "<group>"; };
 		DF3032D120C5581344FC13E1C50B2DCB /* NamedObjectReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NamedObjectReader.h; path = SDK/osx/CommLib/include/NamedObjectReader.h; sourceTree = "<group>"; };
@@ -232,24 +234,22 @@
 		E7C809B01C5AAFC183E2E0544C9BBA37 /* CacheService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CacheService.h; path = SDK/osx/backendless/include/CacheService.h; sourceTree = "<group>"; };
 		E86BBB201C5F6BEF2F4DE921F5D1C9C2 /* AbstractQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AbstractQuery.h; path = SDK/osx/backendless/include/AbstractQuery.h; sourceTree = "<group>"; };
 		EB5B40732BAF80F86AED7B87B4592EA0 /* AMFMessageWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AMFMessageWriter.h; path = SDK/osx/CommLib/include/AMFMessageWriter.h; sourceTree = "<group>"; };
-		EBFB1BE0CD1C7AB56A103EA6C95433FE /* Pods-VelikOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VelikOS-dummy.m"; sourceTree = "<group>"; };
 		ED24BEBBA0EE2EDC6EF40853B88A2771 /* WeborbClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WeborbClient.h; path = SDK/osx/CommLib/include/WeborbClient.h; sourceTree = "<group>"; };
 		EE6EEEBD10ED916CF668D1F5B096FB9E /* GeoService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GeoService.h; path = SDK/osx/backendless/include/GeoService.h; sourceTree = "<group>"; };
 		F0FA64973311811823CC5983D71540E0 /* ClassCastException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ClassCastException.h; path = SDK/osx/backendless/include/ClassCastException.h; sourceTree = "<group>"; };
 		F1473F080FD5F8108120BC8E9A6D5AB2 /* BeaconTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BeaconTracker.h; path = SDK/osx/backendless/include/BeaconTracker.h; sourceTree = "<group>"; };
 		F163E2139A69E8E174A5D2C2A253AC12 /* SharedObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SharedObject.h; path = SDK/osx/CommLib/include/SharedObject.h; sourceTree = "<group>"; };
-		F1941CF7D74E2E84FB0E8E9BDD086DCA /* Pods-VelikOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VelikOS.release.xcconfig"; sourceTree = "<group>"; };
 		F1AA517696A36AEB1D010B666C8DA646 /* DEBUG.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DEBUG.h; path = SDK/osx/CommLib/include/DEBUG.h; sourceTree = "<group>"; };
+		F233E6713B5FEBAF78734F04DDDAD1C8 /* Pods-VelikOSX-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VelikOSX-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F249639D9893B89D43361AC6DC9AB931 /* BodyHolderFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BodyHolderFactory.h; path = SDK/osx/CommLib/include/BodyHolderFactory.h; sourceTree = "<group>"; };
-		F27A1E524ABECC3EFB00BBBCEAA83FCB /* Pods-VelikOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VelikOS-umbrella.h"; sourceTree = "<group>"; };
 		F32B0087BC7A4B840047DCB1F35AD821 /* IntegerReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IntegerReader.h; path = SDK/osx/CommLib/include/IntegerReader.h; sourceTree = "<group>"; };
 		F3F72034A9F48248B28FB4CBE65F089E /* AMFBodyWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AMFBodyWriter.h; path = SDK/osx/CommLib/include/AMFBodyWriter.h; sourceTree = "<group>"; };
-		F62105E15BFF696B3D7C8F84E6DE58B5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6B8E8A07C9F47C77A68224B7FC199BB /* RTMProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RTMProtocol.h; path = SDK/osx/CommLib/include/RTMProtocol.h; sourceTree = "<group>"; };
 		F7D6A430514C79D91E1C0669A13E5C5F /* VideoData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VideoData.h; path = SDK/osx/CommLib/include/VideoData.h; sourceTree = "<group>"; };
 		F885E53BC8E85E59208D3E48B9D5FDD3 /* V3ObjectSerializer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = V3ObjectSerializer.h; path = SDK/osx/CommLib/include/V3ObjectSerializer.h; sourceTree = "<group>"; };
 		F9639D2288A0A21CAE07292434F351B6 /* ArrayType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ArrayType.h; path = SDK/osx/CommLib/include/ArrayType.h; sourceTree = "<group>"; };
 		F9C8111125207843C0018FEFB3C58C45 /* UndefinedType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UndefinedType.h; path = SDK/osx/CommLib/include/UndefinedType.h; sourceTree = "<group>"; };
+		F9E00BA3C5B1D68FFE17749FB5075102 /* Pods-VelikOSX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VelikOSX-umbrella.h"; sourceTree = "<group>"; };
 		FAB107BEE902F92927E96D34D43789DE /* Backendless-Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Backendless-Bridging-Header.h"; path = "SDK/osx/backendless/include/Backendless-Bridging-Header.h"; sourceTree = "<group>"; };
 		FBE851A952FF22E36ED21EE40A4F75FD /* ClassDefinition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ClassDefinition.h; path = SDK/osx/CommLib/include/ClassDefinition.h; sourceTree = "<group>"; };
 		FC218C8FC71F61C9E8E909B77098BDA0 /* BackendlessCacheData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BackendlessCacheData.h; path = SDK/osx/backendless/include/BackendlessCacheData.h; sourceTree = "<group>"; };
@@ -259,17 +259,25 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		97329350F4760C491DCC32D4CCE63E20 /* Frameworks */ = {
+		A1A86C0193E8B461FE29CCCE1F9BA351 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2454C2E1F3F3A4806698665327FB7984 /* Cocoa.framework in Frameworks */,
+				CE75BBD98840755E5F6DCE726D38942E /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04C068A18C5413F804A2959126093416 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
 		1DD4C7B4D54B22C3EF06731B9B5F9647 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,18 +286,10 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		28C17CEF104526ACA07B6EEE217EC43E /* OS X */ = {
-			isa = PBXGroup;
-			children = (
-				1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */,
-			);
-			name = "OS X";
-			sourceTree = "<group>";
-		};
 		39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				28C17CEF104526ACA07B6EEE217EC43E /* OS X */,
+				04C068A18C5413F804A2959126093416 /* OS X */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -528,25 +528,8 @@
 				D9D04BBBBE91501AF3E42994E8168081 /* WebORBDeserializer.h */,
 				5ECC94734B51A1E66D16050135E67F06 /* WebORBSerializer.h */,
 			);
+			name = "Backendless-osx-SDK";
 			path = "Backendless-osx-SDK";
-			sourceTree = "<group>";
-		};
-		6E86A4816AC8F6AFA3E2BC1002A19DDD /* Pods-VelikOS */ = {
-			isa = PBXGroup;
-			children = (
-				F62105E15BFF696B3D7C8F84E6DE58B5 /* Info.plist */,
-				CADF50D26568146F369FD0A1C8299794 /* Pods-VelikOS.modulemap */,
-				57E09DF58F2F560BBFE78725435EB350 /* Pods-VelikOS-acknowledgements.markdown */,
-				AA539FC4254491D44ED6E53E5BB32ABE /* Pods-VelikOS-acknowledgements.plist */,
-				EBFB1BE0CD1C7AB56A103EA6C95433FE /* Pods-VelikOS-dummy.m */,
-				6A1538C810EAA1EB0DF470FE18D4F9D4 /* Pods-VelikOS-frameworks.sh */,
-				4153146879081BAF368F8B5039EBF319 /* Pods-VelikOS-resources.sh */,
-				F27A1E524ABECC3EFB00BBBCEAA83FCB /* Pods-VelikOS-umbrella.h */,
-				277FAFC643033D70C20AEAD3169AB476 /* Pods-VelikOS.debug.xcconfig */,
-				F1941CF7D74E2E84FB0E8E9BDD086DCA /* Pods-VelikOS.release.xcconfig */,
-			);
-			name = "Pods-VelikOS";
-			path = "Target Support Files/Pods-VelikOS";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -555,23 +538,41 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */,
 				1DD4C7B4D54B22C3EF06731B9B5F9647 /* Pods */,
-				8C55B2E4FD2E131A2FDBC428E02D8ADA /* Products */,
-				9154C0E76758817235F1F0B968D51E52 /* Targets Support Files */,
+				9812105987125E2AC440A653A3036968 /* Products */,
+				E22AD50BDE92E29AA5A5AE128CC81B1E /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8C55B2E4FD2E131A2FDBC428E02D8ADA /* Products */ = {
+		9812105987125E2AC440A653A3036968 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DCEAAD10F5CCE62B193DAF50F1984826 /* Pods_VelikOS.framework */,
+				8DE6B72412C650B05AF8C5EEE10B1449 /* Pods_VelikOSX.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9154C0E76758817235F1F0B968D51E52 /* Targets Support Files */ = {
+		B8BE7D4884146B0BB0140A3BDCBFD0A4 /* Pods-VelikOSX */ = {
 			isa = PBXGroup;
 			children = (
-				6E86A4816AC8F6AFA3E2BC1002A19DDD /* Pods-VelikOS */,
+				59D6093E670C8D3C96BA55D243BA19AD /* Info.plist */,
+				C9CA1ABEB659E1812B02131DA130A22F /* Pods-VelikOSX.modulemap */,
+				F233E6713B5FEBAF78734F04DDDAD1C8 /* Pods-VelikOSX-acknowledgements.markdown */,
+				59F13B2C44A7351C97F43DAA543B2BD2 /* Pods-VelikOSX-acknowledgements.plist */,
+				64D02AF5A1143D97D520F60BD3AC27E3 /* Pods-VelikOSX-dummy.m */,
+				887454BF310515ED82E3F828E55A254E /* Pods-VelikOSX-frameworks.sh */,
+				B11EAC3B213D6E86762D3AC20B6B51CE /* Pods-VelikOSX-resources.sh */,
+				F9E00BA3C5B1D68FFE17749FB5075102 /* Pods-VelikOSX-umbrella.h */,
+				19C16D64741E54D3ECA9E2770AF73984 /* Pods-VelikOSX.debug.xcconfig */,
+				13B5C9E063B43AACF26B13877A3B094B /* Pods-VelikOSX.release.xcconfig */,
+			);
+			name = "Pods-VelikOSX";
+			path = "Target Support Files/Pods-VelikOSX";
+			sourceTree = "<group>";
+		};
+		E22AD50BDE92E29AA5A5AE128CC81B1E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B8BE7D4884146B0BB0140A3BDCBFD0A4 /* Pods-VelikOSX */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -579,32 +580,32 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A1801767F5828E6BB0B71A7A7CCE0DD0 /* Headers */ = {
+		4E1A97C44C394FE74A155163B03FB664 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEA4E7208DBC69FCA6A7DC60A9403E5E /* Pods-VelikOS-umbrella.h in Headers */,
+				AAC29D6105993838080BB19957DA27C5 /* Pods-VelikOSX-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		9755AE1904282162A11AB2E242B082C9 /* Pods-VelikOS */ = {
+		0CBA1BAB330CDA59089DD096A04377AD /* Pods-VelikOSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6728B6870581DC91AAAACB104463CCB4 /* Build configuration list for PBXNativeTarget "Pods-VelikOS" */;
+			buildConfigurationList = F106FE0B1F5871FDC522BB4A1E971944 /* Build configuration list for PBXNativeTarget "Pods-VelikOSX" */;
 			buildPhases = (
-				96B821CD13C207654CC78E8081A7260D /* Sources */,
-				97329350F4760C491DCC32D4CCE63E20 /* Frameworks */,
-				A1801767F5828E6BB0B71A7A7CCE0DD0 /* Headers */,
+				FAB4D2242B71B2C809A7C7EBFA5EA962 /* Sources */,
+				A1A86C0193E8B461FE29CCCE1F9BA351 /* Frameworks */,
+				4E1A97C44C394FE74A155163B03FB664 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-VelikOS";
-			productName = "Pods-VelikOS";
-			productReference = DCEAAD10F5CCE62B193DAF50F1984826 /* Pods_VelikOS.framework */;
+			name = "Pods-VelikOSX";
+			productName = "Pods-VelikOSX";
+			productReference = 8DE6B72412C650B05AF8C5EEE10B1449 /* Pods_VelikOSX.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -624,30 +625,30 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 8C55B2E4FD2E131A2FDBC428E02D8ADA /* Products */;
+			productRefGroup = 9812105987125E2AC440A653A3036968 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9755AE1904282162A11AB2E242B082C9 /* Pods-VelikOS */,
+				0CBA1BAB330CDA59089DD096A04377AD /* Pods-VelikOSX */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		96B821CD13C207654CC78E8081A7260D /* Sources */ = {
+		FAB4D2242B71B2C809A7C7EBFA5EA962 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEA02380556EEED2DAEC566474FAAE49 /* Pods-VelikOS-dummy.m in Sources */,
+				A29949DB4055653C2BB7CE610BB3E4F2 /* Pods-VelikOSX-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		25C85A431E9925A1169D72DC738B890D /* Debug */ = {
+		4D9F31F8ADEF9F8D9FB48B370C34FA5E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 277FAFC643033D70C20AEAD3169AB476 /* Pods-VelikOS.debug.xcconfig */;
+			baseConfigurationReference = 13B5C9E063B43AACF26B13877A3B094B /* Pods-VelikOSX.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -655,7 +656,7 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -663,24 +664,24 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-VelikOS/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-VelikOSX/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/Pods-VelikOS/Pods-VelikOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MODULEMAP_FILE = "Target Support Files/Pods-VelikOSX/Pods-VelikOSX.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_VelikOS;
+				PRODUCT_NAME = Pods_VelikOSX;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		5D622BA00757EC20ADAD24C580904C04 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -721,6 +722,43 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
+		};
+		901C06157BBB6110CA494E45EF4DEF28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19C16D64741E54D3ECA9E2770AF73984 /* Pods-VelikOSX.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-VelikOSX/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-VelikOSX/Pods-VelikOSX.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_VelikOSX;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		AB74B5E09B30AE94F1D9671501EA01E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -766,43 +804,6 @@
 			};
 			name = Debug;
 		};
-		CF7DB0FA5EEECCF96CB82701280FA4B6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1941CF7D74E2E84FB0E8E9BDD086DCA /* Pods-VelikOS.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-VelikOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/Pods-VelikOS/Pods-VelikOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_VelikOS;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -815,11 +816,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6728B6870581DC91AAAACB104463CCB4 /* Build configuration list for PBXNativeTarget "Pods-VelikOS" */ = {
+		F106FE0B1F5871FDC522BB4A1E971944 /* Build configuration list for PBXNativeTarget "Pods-VelikOSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				25C85A431E9925A1169D72DC738B890D /* Debug */,
-				CF7DB0FA5EEECCF96CB82701280FA4B6 /* Release */,
+				901C06157BBB6110CA494E45EF4DEF28 /* Debug */,
+				4D9F31F8ADEF9F8D9FB48B370C34FA5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

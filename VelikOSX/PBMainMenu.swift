@@ -53,7 +53,7 @@ class PBMainMenu: NSWindowController {
         }
         
         let annotation = MKPointAnnotation()
-        annotation.title = "Your store location"
+        annotation.title = "Your Store"
         annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude.doubleValue, longitude: location.longitude.doubleValue)
         
         mapView.showAnnotations([annotation], animated: true)
@@ -80,7 +80,7 @@ class PBMainMenu: NSWindowController {
         var fault : Fault? = nil
         PBCyclesResponder.shared.delegate = self
         PBCyclesResponder.shared.subscription = PBBackendlessAPI.shared.backendless?.messagingService.subscribe(storeChannel, subscriptionResponder: PBCyclesResponder.shared, subscriptionOptions: subscriptionOptions, error: &fault)
-        print(fault?.message ?? "Fault")
+        print(fault?.message ?? "Success subscription for updates")
     }
     
     //MARK - cancel subscribe
@@ -123,7 +123,7 @@ class PBMainMenu: NSWindowController {
             wrappedStore = PBBackendlessAPI.shared.backendless?.persistenceService.update(store, error: &fault) as? Store
             if wrappedStore == nil {
                 retrieveCoordinates()
-                runSheetAlert(messageText: "Location error", informativeText: (fault?.message ?? "Fault"))
+                runSheetAlert(messageText: "Location error", informativeText: (fault?.message ?? "Location is not saved"))
             }
             else {
                 geopoint = store.geopoint
@@ -204,17 +204,23 @@ class PBMainMenu: NSWindowController {
             let store = PBBackendlessAPI.shared.loadCurrentStore(user, relations:  ["store", "store.geopoint"])
             else { return }
         
+        var fault : Fault? = nil
         let cycles = PBCyclesResponder.shared.cycles
         tableOfCycles.enumerateAvailableRowViews { (view, row) in
             if let cellState = view.view(atColumn: 1) as? PBCellState, let selectedIndex = cellState.comboBox?.indexOfSelectedItem {
                 let cycle = cycles.object(at: row) as! Cycle
+                let oldState = cycle.state
                 cycle.state = NSNumber(value: selectedIndex)
+                guard (PBBackendlessAPI.shared.backendless?.persistenceService.update(cycle, error: &fault)) != nil else {
+                    cycle.state = oldState
+                    store.cycles = cycles
+                    tableOfCycles.reloadData()
+                    runSheetAlert(messageText: "Save error", informativeText: fault?.message ?? "No fault")
+                    return
+                }
             }
         }
         store.cycles = cycles
-        var fault : Fault? = nil
-        _ = PBBackendlessAPI.shared.backendless?.persistenceService.update(store, error: &fault)
-        print(fault?.message ?? "No fault")
         tableOfCycles.reloadData()
     }
     

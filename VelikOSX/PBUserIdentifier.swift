@@ -74,12 +74,12 @@ class PBUserIdentifier: NSWindowController {
     
     @IBAction func lDone(_ sender: NSButton) {
         
-        guard let fault = PBBackendlessAPI.shared.syncLoginUser(email: lEmail.stringValue, password: lPassword.stringValue, isNeedToRemember: lCheck.state == 0 ? false : true) else {
+        guard let message = PBBackendlessAPI.shared.syncLoginUser(email: lEmail.stringValue, password: lPassword.stringValue, isNeedToRemember: lCheck.state == 0 ? false : true) else {
             openMainMenu()
             return
         }
         
-        runSheetAlert(messageText: "Login error", informativeText: fault.message ?? "Please try again")
+        runSheetAlert(messageText: "Login error", informativeText: message)
         
     }
     

@@ -37,7 +37,7 @@ class PBAddCycles: NSWindowController {
             if let info = cycle.information as String? {
                 information.stringValue = info
             }
-            if let price = cycle.pricePerHouar?.stringValue {
+            if let price = cycle.pricePerHour?.stringValue {
                 pricePerHour.stringValue = price
             }
             if let cycleName = cycle.name as String? {
@@ -76,7 +76,7 @@ class PBAddCycles: NSWindowController {
                 }
                 cycle.name = cycleName as NSString
                 cycle.information = info as NSString
-                cycle.pricePerHouar = NSNumber(value: price)
+                cycle.pricePerHour = NSNumber(value: price)
                 cycle.firstImage = nil; cycle.secondImage = nil; cycle.thirdImage = nil
                 
                 var fault : Fault? = nil
@@ -174,7 +174,6 @@ class PBAddCycles: NSWindowController {
         fault = nil
         _ = PBBackendlessAPI.shared.backendless?.persistenceService.update(store, error: &fault)
         PBCyclesResponder.shared.cycles = store.cycles ?? NSMutableArray()
-        print(fault?.message ?? "Fault")
-        print(fault?.faultCode ?? "Fault")
+        print(fault?.message ?? "Success update store")
     }
 }

@@ -1,0 +1,6 @@
+framework module Pods_VelikOSX {
+  umbrella header "Pods-VelikOSX-umbrella.h"
+
+  export *
+  module * { export * }
+}

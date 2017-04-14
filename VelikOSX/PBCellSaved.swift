@@ -27,7 +27,6 @@ class PBCellSaved: NSTableCellView {
             else {
                 label?.stringValue = "No"
                 label?.textColor = colors.red
-                
             }
         }
     }
