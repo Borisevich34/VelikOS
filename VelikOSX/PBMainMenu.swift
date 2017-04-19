@@ -1,6 +1,6 @@
 //
 //  PBMainMenu.swift
-//  VelikOS
+//  VelikOSX
 //
 //  Created by Pavel Borisevich on 14.02.17.
 //  Copyright © 2017 Pavel Borisevich. All rights reserved.
@@ -31,6 +31,8 @@ class PBMainMenu: NSWindowController {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        PBCyclesResponder.shared.delegate = self
     }
     
     func loadCustomElements() {
@@ -38,11 +40,11 @@ class PBMainMenu: NSWindowController {
         if let user = PBBackendlessAPI.shared.currentUser() {
             
             userName.stringValue = user.name as String
-            wrappedStore = PBBackendlessAPI.shared.loadCurrentStore(user, relations: ["store", "store.geopoint", "store.cycles"])
+            wrappedStore = PBBackendlessAPI.shared.loadCurrentStore(user, relations: ["store", "store.geopoint", "store.cycles.user"])
             if let storeGeopoint = wrappedStore?.geopoint {
                 geopoint = storeGeopoint
             }
-            if let info = (wrappedStore?.information as? String)?.trimmingCharacters(in: [" "]) {
+            if let info = (wrappedStore?.information as String?)?.trimmingCharacters(in: [" "]) {
                 sStoreInformation.stringValue = info
                 sPrevStoreInformation = info
             }
@@ -62,12 +64,12 @@ class PBMainMenu: NSWindowController {
         sLatitude.stringValue = location.latitude.stringValue
         sLongitude.stringValue = location.longitude.stringValue
         if let cycles = wrappedStore?.cycles {
-            var fault : Fault?
-            for cycle in cycles {
-                fault = nil
-                let unwrappedCycle = cycle as! Cycle
-                unwrappedCycle.user = (PBBackendlessAPI.shared.backendless?.persistenceService.load(unwrappedCycle, relations: ["cycle.user"], error: &fault) as? Cycle)?.user
-            }
+        //    var fault : Fault?
+        //    for cycle in cycles {
+        //        fault = nil
+        //        let unwrappedCycle = cycle as! Cycle
+        //        unwrappedCycle.user = (PBBackendlessAPI.shared.backendless?.persistenceService.load(unwrappedCycle, relations: ["user"], error: &fault) as? Cycle)?.user
+        //    }
             PBCyclesResponder.shared.cycles = cycles
             tableOfCycles.reloadData()
         }
@@ -210,13 +212,18 @@ class PBMainMenu: NSWindowController {
             if let cellState = view.view(atColumn: 1) as? PBCellState, let selectedIndex = cellState.comboBox?.indexOfSelectedItem {
                 let cycle = cycles.object(at: row) as! Cycle
                 let oldState = cycle.state
-                cycle.state = NSNumber(value: selectedIndex)
-                guard (PBBackendlessAPI.shared.backendless?.persistenceService.update(cycle, error: &fault)) != nil else {
-                    cycle.state = oldState
-                    store.cycles = cycles
-                    tableOfCycles.reloadData()
-                    runSheetAlert(messageText: "Save error", informativeText: fault?.message ?? "No fault")
-                    return
+                if selectedIndex != cycle.state?.intValue {
+                    cycle.state = NSNumber(value: selectedIndex)
+                    if selectedIndex == 0 || selectedIndex == 1 {
+                        cycle.user = nil
+                    }
+                    guard (PBBackendlessAPI.shared.backendless?.persistenceService.update(cycle, error: &fault)) != nil else {
+                        cycle.state = oldState
+                        store.cycles = cycles
+                        tableOfCycles.reloadData()
+                        runSheetAlert(messageText: "Save error", informativeText: fault?.message ?? "No fault")
+                        return
+                    }
                 }
             }
         }
@@ -250,7 +257,7 @@ class PBMainMenu: NSWindowController {
         //MARK - needs alert before return in guard
         guard let user = PBBackendlessAPI.shared.currentUser(),
             let store = PBBackendlessAPI.shared.loadCurrentStore(user, relations:  ["store", "store.geopoint"]),
-            let storeId = store.objectId as? String
+            let storeId = store.objectId as String?
             else { return }
         PBAddCyclesHelper.shared.storeId = storeId
         PBAddCyclesHelper.shared.table = tableOfCycles
@@ -319,7 +326,7 @@ extension PBMainMenu : NSTableViewDelegate, NSTableViewDataSource {
             break
         case "AutomaticTableColumnIdentifier.4":
             let cellView = tableView.make(withIdentifier: "User", owner: self) as? PBCellUser
-            cellView?.label?.stringValue = (cycle.user?.email as String?) ?? "--------------------"
+            cellView?.label?.stringValue = (cycle.user?.name as String?) ?? "--------------------"
             columnView = cellView
             break
         case "AutomaticTableColumnIdentifier.5":

@@ -1,6 +1,6 @@
 //
 //  PBAddCycle.swift
-//  VelikOS
+//  VelikOSX
 //
 //  Created by Pavel Borisevich on 20.02.17.
 //  Copyright © 2017 Pavel Borisevich. All rights reserved.
@@ -62,7 +62,7 @@ class PBAddCycles: NSWindowController {
     @IBAction func saveAllPressed(_ sender: NSButton) {
         
         if let cycle = PBAddCyclesHelper.shared.cycle {
-            if let cycleId = cycle.objectId as? String, let storeId = PBAddCyclesHelper.shared.storeId {
+            if let cycleId = cycle.objectId as String?, let storeId = PBAddCyclesHelper.shared.storeId {
                 let directoryPath = "images/store_".appending(storeId).appendingFormat("/cycle_%@", cycleId)
                 PBImagesHelper.removeImages(directoryPath)
                 

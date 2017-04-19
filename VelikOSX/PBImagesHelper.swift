@@ -1,6 +1,6 @@
 //
 //  PBImagesHelper.swift
-//  VelikOS
+//  VelikOSX
 //
 //  Created by Pavel Borisevich on 24.02.17.
 //  Copyright © 2017 Pavel Borisevich. All rights reserved.

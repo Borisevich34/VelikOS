@@ -1,6 +1,6 @@
 //
 //  PBCyclesResponder.swift
-//  VelikOS
+//  VelikOSX
 //
 //  Created by Pavel Borisevich on 22.02.17.
 //  Copyright © 2017 Pavel Borisevich. All rights reserved.
@@ -20,8 +20,13 @@ class PBCyclesResponder : NSObject, IResponder {
     
     func responseHandler(_ response: Any!) -> Any! {
         if let messages = response as? [Message], !messages.isEmpty {
-            print(messages.first?.data ?? "Hasn't data")
-            delegate?.tableOfCycles.reloadData()
+            print(messages.first?.data ?? "Message from channel hasn't data")
+            if let user = PBBackendlessAPI.shared.currentUser() {
+                if let storeCycles = PBBackendlessAPI.shared.loadCurrentStore(user, relations: ["store.geopoint", "store.cycles.user"])?.cycles {
+                    cycles = storeCycles
+                    delegate?.tableOfCycles.reloadData()
+                }
+            }
         }
         return nil
     }

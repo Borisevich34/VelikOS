@@ -1,6 +1,6 @@
 //
 //  CoreData.swift
-//  VelikOS
+//  VelikOSX
 //
 //  Created by Pavel Borisevich on 14.02.17.
 //  Copyright © 2017 Pavel Borisevich. All rights reserved.
@@ -23,7 +23,7 @@ class PBCoreData {
     
     lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-        let modelURL = Bundle.main.url(forResource: "VelikOS", withExtension: "momd")!
+        let modelURL = Bundle.main.url(forResource: "VelikOSX", withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     
@@ -58,7 +58,7 @@ class PBCoreData {
         var coordinator: NSPersistentStoreCoordinator? = nil
         if failError == nil {
             coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-            let url = self.applicationDocumentsDirectory.appendingPathComponent("VelikOS.storedata")
+            let url = self.applicationDocumentsDirectory.appendingPathComponent("VelikOSX.storedata")
             do {
                 try coordinator!.addPersistentStore(ofType: NSXMLStoreType, configurationName: nil, at: url, options: nil)
             } catch {
