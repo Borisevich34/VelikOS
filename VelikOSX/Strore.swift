@@ -13,6 +13,7 @@ class Store: NSObject {
     var cycles : NSMutableArray?
     var geopoint : GeoPoint?
     var information : NSString?
+    var name : NSString?
     
     override init() {
         super.init()

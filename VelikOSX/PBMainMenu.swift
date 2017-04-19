@@ -14,13 +14,14 @@ class PBMainMenu: NSWindowController {
     @IBOutlet weak var userName: NSTextField!
     
     //Store
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapView: PBMapView!
     var geopoint : GeoPoint?
     var wrappedStore : Store?
     @IBOutlet weak var sLatitude: NSTextField!
     @IBOutlet weak var sLongitude: NSTextField!
     var sPrevStoreInformation: String?
     @IBOutlet weak var sStoreInformation: NSTextField!
+    @IBOutlet weak var sStoreName: NSTextField!
     
     //Cycles
     @IBOutlet weak var tableOfCycles: NSTableView!
@@ -41,6 +42,7 @@ class PBMainMenu: NSWindowController {
             
             userName.stringValue = user.name as String
             wrappedStore = PBBackendlessAPI.shared.loadCurrentStore(user, relations: ["store", "store.geopoint", "store.cycles.user"])
+            sStoreName.stringValue = (wrappedStore?.name) as String? ?? ""
             if let storeGeopoint = wrappedStore?.geopoint {
                 geopoint = storeGeopoint
             }
@@ -102,6 +104,11 @@ class PBMainMenu: NSWindowController {
     //MARK - Store methods
     @IBAction func sSetLocation(_ sender: Any) {
 
+        if sStoreName.stringValue == "" {
+            sStoreName.stringValue = "Store"
+        }
+        wrappedStore?.name = sStoreName.stringValue as NSString
+        
         if let store = wrappedStore {
             var theFault : Fault? = nil
             PBBackendlessAPI.shared.backendless?.geoService.remove(store.geopoint, error: &theFault)
@@ -133,7 +140,7 @@ class PBMainMenu: NSWindowController {
                     return
                 }
                 let annotation = MKPointAnnotation()
-                annotation.title = "Your store location"
+                annotation.title = "Your Store"
                 annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude.doubleValue, longitude: location.longitude.doubleValue)
                 mapView.showAnnotations([annotation], animated: true)
                 mapView.selectAnnotation(annotation, animated: true)
