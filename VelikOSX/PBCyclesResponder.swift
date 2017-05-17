@@ -32,7 +32,7 @@ class PBCyclesResponder : NSObject, IResponder {
     }
     
     func errorHandler(_ fault: Fault!) {
-        print(fault.message ?? "Fault")
+        print(fault.message ?? "Success")
     }
     
     func cancelSubscribe() {

@@ -59,7 +59,7 @@
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
                             <tabViewItem label="Store" identifier="" id="JXB-8n-M9T">
-                                <view key="view" ambiguous="YES" id="MiT-4b-ijc">
+                                <view key="view" id="MiT-4b-ijc">
                                     <rect key="frame" x="10" y="7" width="617" height="401"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -334,14 +334,14 @@ Contucts: cellphone, email or other.</string>
                                             </connections>
                                         </mapView>
                                         <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="QGD-9O-wIG">
-                                            <rect key="frame" x="286" y="18" width="45" height="363"/>
+                                            <rect key="frame" x="286" y="18" width="86" height="363"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         </box>
                                     </subviews>
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="Cycles" identifier="1" id="f4e-tC-ilc">
-                                <view key="view" id="gCP-wS-UwP">
+                                <view key="view" ambiguous="YES" id="gCP-wS-UwP">
                                     <rect key="frame" x="10" y="7" width="617" height="401"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -350,7 +350,7 @@ Contucts: cellphone, email or other.</string>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" ambiguous="YES" id="DY0-wy-Poc">
                                                 <rect key="frame" x="1" y="0.0" width="581" height="327"/>
-                                                <autoresizingMask key="autoresizingMask"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="30" headerView="eyU-8N-XCQ" viewBased="YES" id="YIg-76-BiO">
                                                         <rect key="frame" x="0.0" y="0.0" width="581" height="304"/>
@@ -359,7 +359,7 @@ Contucts: cellphone, email or other.</string>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                         <tableColumns>
-                                                            <tableColumn width="123" minWidth="40" maxWidth="1000" id="ehI-zm-OoH">
+                                                            <tableColumn width="98" minWidth="40" maxWidth="1000" id="ehI-zm-OoH">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Name">
                                                                     <font key="font" metaFont="smallSystem"/>
                                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -373,7 +373,7 @@ Contucts: cellphone, email or other.</string>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                 <prototypeCellViews>
                                                                     <tableCellView identifier="Name" id="mu2-7d-RID" customClass="PBCellName" customModule="VelikOSX" customModuleProvider="target">
-                                                                        <rect key="frame" x="1" y="1" width="123" height="26"/>
+                                                                        <rect key="frame" x="1" y="1" width="98" height="26"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
                                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Mf-FB-ack">
@@ -406,7 +406,7 @@ Contucts: cellphone, email or other.</string>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                 <prototypeCellViews>
                                                                     <tableCellView identifier="State" id="uz1-HO-jaj" customClass="PBCellState" customModule="VelikOSX" customModuleProvider="target">
-                                                                        <rect key="frame" x="127" y="1" width="102" height="26"/>
+                                                                        <rect key="frame" x="102" y="1" width="102" height="26"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
                                                                             <comboBox verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlO-dS-dZA">
@@ -448,7 +448,7 @@ Contucts: cellphone, email or other.</string>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                 <prototypeCellViews>
                                                                     <tableCellView identifier="Period" id="GVy-nh-Nxv" customClass="PBCellPeriod" customModule="VelikOSX" customModuleProvider="target">
-                                                                        <rect key="frame" x="232" y="1" width="96" height="26"/>
+                                                                        <rect key="frame" x="207" y="1" width="96.5" height="26"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
                                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1T2-ri-LD9">
@@ -481,11 +481,11 @@ Contucts: cellphone, email or other.</string>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                 <prototypeCellViews>
                                                                     <tableCellView identifier="Order" id="Iyz-zg-rsY" customClass="PBCellOrder" customModule="VelikOSX" customModuleProvider="target">
-                                                                        <rect key="frame" x="331.5" y="1" width="64" height="26"/>
+                                                                        <rect key="frame" x="306.5" y="1" width="64.5" height="26"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
                                                                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lye-QR-kSL">
-                                                                                <rect key="frame" x="5" y="6" width="57.5" height="17"/>
+                                                                                <rect key="frame" x="5" y="6" width="58" height="17"/>
                                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" placeholderString="08:10" id="GGg-Fy-hug">
                                                                                     <font key="font" metaFont="system"/>
@@ -500,7 +500,7 @@ Contucts: cellphone, email or other.</string>
                                                                     </tableCellView>
                                                                 </prototypeCellViews>
                                                             </tableColumn>
-                                                            <tableColumn identifier="" width="129" minWidth="10" maxWidth="3.4028234663852886e+38" id="Ipr-lH-6NN">
+                                                            <tableColumn identifier="" width="144" minWidth="10" maxWidth="3.4028234663852886e+38" id="Ipr-lH-6NN">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="User">
                                                                     <font key="font" metaFont="smallSystem"/>
                                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -514,11 +514,11 @@ Contucts: cellphone, email or other.</string>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                 <prototypeCellViews>
                                                                     <tableCellView identifier="User" id="HHO-aL-lRt" customClass="PBCellUser" customModule="VelikOSX" customModuleProvider="target">
-                                                                        <rect key="frame" x="399" y="1" width="129" height="26"/>
+                                                                        <rect key="frame" x="374" y="1" width="144" height="26"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
                                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alK-0o-hjC">
-                                                                                <rect key="frame" x="1" y="6" width="127" height="17"/>
+                                                                                <rect key="frame" x="0.0" y="6" width="148" height="17"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" placeholderString="borisevich@mail.ru" id="wpw-mV-40d">
                                                                                     <font key="font" metaFont="system"/>
@@ -547,7 +547,7 @@ Contucts: cellphone, email or other.</string>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                 <prototypeCellViews>
                                                                     <tableCellView identifier="Saved" id="NUA-oC-U8i" customClass="PBCellSaved" customModule="VelikOSX" customModuleProvider="target">
-                                                                        <rect key="frame" x="531" y="1" width="48" height="26"/>
+                                                                        <rect key="frame" x="521" y="1" width="48" height="26"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
                                                                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLe-Kz-EV6">
@@ -575,7 +575,7 @@ Contucts: cellphone, email or other.</string>
                                                 </subviews>
                                             </clipView>
                                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="vIF-RX-bSf">
-                                                <rect key="frame" x="1" y="-16" width="0.0" height="16"/>
+                                                <rect key="frame" x="1" y="311" width="581" height="16"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="bXh-hk-u0w">

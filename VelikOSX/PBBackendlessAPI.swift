@@ -30,7 +30,6 @@ class PBBackendlessAPI {
         let user = BackendlessUser(properties: properties)
         let registredUser = backendless?.userService.registering(user, error: &fault)
         
-        //---
         if let store = loadCurrentStore(registredUser, relations: nil) {
             var testFault : Fault? = nil
             store.geopoint = GeoPoint(point: GEO_POINT(latitude: latitude, longitude: longitude), categories: ["Default"], metadata: ["store": store])
@@ -38,7 +37,6 @@ class PBBackendlessAPI {
                 print(testFault?.message ?? "Success load relation-store from user")
             }
         }
-        //---
 
         return fault
     }

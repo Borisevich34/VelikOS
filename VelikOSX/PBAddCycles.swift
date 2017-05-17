@@ -23,8 +23,8 @@ class PBAddCycles: NSWindowController {
         super.windowDidLoad()
         
         if let cycle = PBAddCyclesHelper.shared.cycle {
-            let images : [Int : NSImage?] = PBImagesHelper.downloadImages(cycle)
-            print("Ok")
+            let images : [Int : NSImage?] = PBImagesHelper.downloadImagesOfCycle(cycle)
+            
             if let firstImageFromDictionary = images[0] {
                 firstImage.image = firstImageFromDictionary
             }
@@ -77,29 +77,24 @@ class PBAddCycles: NSWindowController {
                 cycle.name = cycleName as NSString
                 cycle.information = info as NSString
                 cycle.pricePerHour = NSNumber(value: price)
-                cycle.firstImage = nil; cycle.secondImage = nil; cycle.thirdImage = nil
                 
                 var fault : Fault? = nil
                 if let tiffData = firstImage.image?.tiffRepresentation {
                     if let pngData = NSBitmapImageRep(data: tiffData)?.representation(using: .PNG, properties: [:]) {
                         let pathToImage = directoryPath.appending("/firstImage.png")
                         _ = PBBackendlessAPI.shared.backendless?.fileService.upload(pathToImage, content: pngData, error: &fault)
-                        cycle.firstImage = pathToImage as NSString
-                        
                     }
                 }
                 if let tiffData = secondImage.image?.tiffRepresentation {
                     if let pngData = NSBitmapImageRep(data: tiffData)?.representation(using: .PNG, properties: [:]) {
                         let pathToImage = directoryPath.appending("/secondImage.png")
                         _ = PBBackendlessAPI.shared.backendless?.fileService.upload(pathToImage, content: pngData, error: &fault)
-                        cycle.secondImage = pathToImage as NSString
                     }
                 }
                 if let tiffData = thirdImage.image?.tiffRepresentation {
                     if let pngData = NSBitmapImageRep(data: tiffData)?.representation(using: .PNG, properties: [:]) {
                         let pathToImage = directoryPath.appending("/thirdImage.png")
                         _ = PBBackendlessAPI.shared.backendless?.fileService.upload(pathToImage, content: pngData, error: &fault)
-                        cycle.thirdImage = pathToImage as NSString
                     }
                 }
                 _ = PBBackendlessAPI.shared.backendless?.persistenceService.update(cycle, error: &fault)
@@ -118,7 +113,6 @@ class PBAddCycles: NSWindowController {
     
     private func addNewCycle() {
         
-        //directory of images = store_objectId/cycle_objectId/
         let cycleName = name.stringValue.trimmingCharacters(in: [" "])
         let info = information.stringValue.trimmingCharacters(in: [" "])
         if cycleName == "" || info == "" {
@@ -128,13 +122,13 @@ class PBAddCycles: NSWindowController {
             return
         }
         
-        
         let user = PBBackendlessAPI.shared.currentUser()
         guard let store = PBBackendlessAPI.shared.loadCurrentStore(user, relations: ["store", "store.geopoint", "store.cycles"]) else {
             return
         }
         
-        let cycleNotCreated = Cycle(cycleName, info: info, price: price, firstUrl: nil, secondUrl: nil, thirdUrl: nil)
+        let location = "\(store.geopoint?.latitude.intValue ?? 0) \(store.geopoint?.longitude.intValue ?? 0)"
+        let cycleNotCreated = Cycle(cycleName, info: info, price: price, location: location, storeId: (store.objectId as String?) ?? "")
         var fault : Fault? = nil
         guard let cycleCreated = PBBackendlessAPI.shared.backendless?.persistenceService.create(cycleNotCreated, error: &fault) as? Cycle else {
             return
@@ -145,22 +139,18 @@ class PBAddCycles: NSWindowController {
             if let pngData = NSBitmapImageRep(data: tiffData)?.representation(using: .PNG, properties: [:]) {
                 let pathToImage = path.appending("firstImage.png")
                 _ = PBBackendlessAPI.shared.backendless?.fileService.upload(pathToImage, content: pngData, error: &fault)
-                cycleCreated.firstImage = pathToImage as NSString
-                
             }
         }
         if let tiffData = secondImage.image?.tiffRepresentation {
             if let pngData = NSBitmapImageRep(data: tiffData)?.representation(using: .PNG, properties: [:]) {
                 let pathToImage = path.appending("secondImage.png")
                 _ = PBBackendlessAPI.shared.backendless?.fileService.upload(pathToImage, content: pngData, error: &fault)
-                cycleCreated.secondImage = pathToImage as NSString
             }
         }
         if let tiffData = thirdImage.image?.tiffRepresentation {
             if let pngData = NSBitmapImageRep(data: tiffData)?.representation(using: .PNG, properties: [:]) {
                 let pathToImage = path.appending("thirdImage.png")
                 _ = PBBackendlessAPI.shared.backendless?.fileService.upload(pathToImage, content: pngData, error: &fault)
-                cycleCreated.thirdImage = pathToImage as NSString
             }
         }
         

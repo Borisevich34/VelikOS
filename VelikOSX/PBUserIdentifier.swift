@@ -35,8 +35,6 @@ class PBUserIdentifier: NSWindowController {
     @IBOutlet weak var rLatitude: NSTextField!
     @IBOutlet weak var rLongitude: NSTextField!
 
-    
-    
     @IBAction func rDone(_ sender: NSButton) {
         
         guard let latitude = Double(rLatitude.stringValue) else {
@@ -78,7 +76,6 @@ class PBUserIdentifier: NSWindowController {
             openMainMenu()
             return
         }
-        
         runSheetAlert(messageText: "Login error", informativeText: message)
         
     }

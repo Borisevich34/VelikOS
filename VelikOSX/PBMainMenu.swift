@@ -222,7 +222,10 @@ class PBMainMenu: NSWindowController {
                 if selectedIndex != cycle.state?.intValue {
                     cycle.state = NSNumber(value: selectedIndex)
                     if selectedIndex == 0 || selectedIndex == 1 {
-                        cycle.user = nil
+                        cycle.userEmail = ""
+                        cycle.orderTime = ""
+                        cycle.timePeriod = NSNumber(value: 0)
+                        cycle.location = "\((store.geopoint?.latitude.intValue) ?? 0) \((store.geopoint?.longitude.intValue) ?? 0)" as NSString
                     }
                     guard (PBBackendlessAPI.shared.backendless?.persistenceService.update(cycle, error: &fault)) != nil else {
                         cycle.state = oldState
@@ -256,7 +259,7 @@ class PBMainMenu: NSWindowController {
             var fault : Fault? = nil
             _ = PBBackendlessAPI.shared.backendless?.persistenceService.remove(cycle, error: &fault)
             _ = PBBackendlessAPI.shared.backendless?.persistenceService.update(store, error: &fault)
-            print(fault?.message ?? "No fault")
+            print(fault?.message ?? "Success")
             tableOfCycles.reloadData()
         }
     }
@@ -323,7 +326,7 @@ extension PBMainMenu : NSTableViewDelegate, NSTableViewDataSource {
             break
         case "AutomaticTableColumnIdentifier.2":
             let cellView = tableView.make(withIdentifier: "Period", owner: self) as? PBCellPeriod
-            cellView?.label?.stringValue = (cycle.timePeriod as String?) ?? "---------------"
+            cellView?.label?.stringValue = getTymePeriodFromCycle(cycle) ?? "---------------"
             columnView = cellView
             break
         case "AutomaticTableColumnIdentifier.3":
@@ -333,7 +336,7 @@ extension PBMainMenu : NSTableViewDelegate, NSTableViewDataSource {
             break
         case "AutomaticTableColumnIdentifier.4":
             let cellView = tableView.make(withIdentifier: "User", owner: self) as? PBCellUser
-            cellView?.label?.stringValue = (cycle.user?.name as String?) ?? "--------------------"
+            cellView?.label?.stringValue = (cycle.userEmail as String?) ?? "-----------------------"
             columnView = cellView
             break
         case "AutomaticTableColumnIdentifier.5":
@@ -346,5 +349,14 @@ extension PBMainMenu : NSTableViewDelegate, NSTableViewDataSource {
             break
         }
         return columnView
+    }
+    
+    private func getTymePeriodFromCycle(_ cycle: Cycle) -> String? {
+        guard let orderTimeComponents = (cycle.orderTime as String?)?.components(separatedBy: " : "),
+            let timePeriod = cycle.timePeriod?.intValue else { return nil }
+        guard let firstTimeComponent = Int(orderTimeComponents.first ?? "0"),
+            let secondTimeComponent = Int(orderTimeComponents.last ?? "0") else { return nil }
+        
+        return "\(firstTimeComponent):\(secondTimeComponent < 10 ? "0\(secondTimeComponent)" : "\(secondTimeComponent)") - \(firstTimeComponent + (secondTimeComponent + timePeriod) / 60) : \(((secondTimeComponent + timePeriod) % 60) < 10 ? "0\((secondTimeComponent + timePeriod) % 60)" : "\((secondTimeComponent + timePeriod) % 60)")"
     }
 }

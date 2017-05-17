@@ -21,33 +21,30 @@ class Cycle: NSObject {
     var state : NSNumber?
     var objectId : NSString?
     
-    var timePeriod : NSString?
+    var timePeriod : NSNumber?
     var orderTime : NSString?
     
     var name : NSString?
     var information : NSString?
     var pricePerHour : NSNumber?
-    var user : BackendlessUser?
+    var userEmail : NSString?
     
-    var firstImage : NSString?
-    var secondImage : NSString?
-    var thirdImage : NSString?
+    var location : NSString?
+    var storeId : NSString?
     
     override init() {
         super.init()
         state = 0
     }
     
-    init(_ cycleName: String, info: String, price: Double, firstUrl: String?, secondUrl: String?, thirdUrl: String?) {
-        state = 0
+    init(_ cycleName: String, info: String, price: Double, location: String, storeId: String) {
         
-        name = cycleName as NSString
-        information = info as NSString
-        pricePerHour = NSNumber(value: price)
-        
-        firstImage = firstUrl as NSString?
-        secondImage = secondUrl as NSString?
-        thirdImage = thirdUrl as NSString?
+        self.state = 0
+        self.name = cycleName as NSString
+        self.information = info as NSString
+        self.pricePerHour = NSNumber(value: price)
+        self.location = location as NSString
+        self.storeId = storeId as NSString
         
         super.init()
     }
