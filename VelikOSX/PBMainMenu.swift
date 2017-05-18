@@ -222,8 +222,8 @@ class PBMainMenu: NSWindowController {
                 if selectedIndex != cycle.state?.intValue {
                     cycle.state = NSNumber(value: selectedIndex)
                     if selectedIndex == 0 || selectedIndex == 1 {
-                        cycle.userEmail = ""
-                        cycle.orderTime = ""
+                        cycle.userEmail = nil
+                        cycle.orderTime = nil
                         cycle.timePeriod = NSNumber(value: 0)
                         cycle.location = "\((store.geopoint?.latitude.intValue) ?? 0) \((store.geopoint?.longitude.intValue) ?? 0)" as NSString
                     }
